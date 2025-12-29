@@ -1,0 +1,561 @@
+/* ==========================================================================
+   DYNAMIC BACKGROUND SYSTEM (Preserved with all motion features)
+   ========================================================================== */
+
+.lp {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: #eef7f3; /* mint base */
+  color: #0b2b20;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Noto Sans", "Helvetica Neue", sans-serif;
+}
+
+.lp,
+.lp * {
+  box-sizing: border-box;
+}
+
+/* Fixed background layer for dynamic blobs */
+.lp-bg {
+  position: fixed;
+  inset: -40px;
+  z-index: -10;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.lp-bg::before,
+.lp-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Blobs layer - Uses CSS variables updated via JS for mouse/scroll motion */
+.lp-bg::before {
+  background:
+    radial-gradient(circle at calc(20% + var(--bgx, 0px)) calc(12% + var(--bgy, 0px)),
+      rgba(15, 106, 55, 0.18), transparent 55%),
+    radial-gradient(circle at calc(85% - var(--bgx, 0px)) calc(20% + var(--bgy, 0px)),
+      rgba(215, 242, 228, 0.92), transparent 55%),
+    radial-gradient(circle at calc(52% + var(--bgx, 0px)) calc(82% - var(--bgy, 0px)),
+      rgba(231, 246, 238, 0.90), transparent 58%),
+    radial-gradient(circle at 35% 60%,
+      rgba(15, 106, 55, 0.14), transparent 60%),
+    linear-gradient(180deg, #eef7f3 0%, #f4fbf7 45%, #eef7f3 100%);
+
+  filter: blur(18px);
+  opacity: 1;
+  transform: rotate(var(--bgrot, 0deg)) scale(1.05);
+  transition: transform 120ms linear;
+}
+
+/* Subtle grain overlay for professional texture */
+.lp-bg::after {
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   TOP NAVIGATION
+   ========================================================================== */
+
+.lp-nav {
+  width: 100%;
+  padding: 28px 0 18px;
+}
+
+.lp-nav-inner {
+  width: min(1200px, calc(100% - 120px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr 220px;
+  align-items: center;
+}
+
+.lp-brand {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 20px;
+}
+
+.lp-nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+}
+
+.lp-nav-link {
+  text-decoration: none;
+  color: rgba(11, 43, 32, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 6px 2px;
+  position: relative;
+}
+
+.lp-nav-link:hover {
+  color: rgba(11, 43, 32, 1);
+}
+
+.lp-nav-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.lp-linkbtn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgba(11, 43, 32, 0.85);
+  padding: 10px 10px;
+  font-size: 16px;
+}
+
+.lp-pillbtn {
+  border: 0;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #d7f2e4;
+  color: #0b2b20;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 6px 18px rgba(11, 43, 32, 0.08);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.lp-main {
+  width: 100%;
+}
+
+.lp-container {
+  width: min(1200px, calc(100% - 120px));
+  margin: 0 auto;
+}
+
+.lp-hero {
+  padding: 16px 0 52px;
+}
+
+.lp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.lp-hero-left {
+  padding-top: 22px;
+}
+
+.lp-powered {
+  font-size: 13px;
+  color: rgba(11, 43, 32, 0.55);
+  margin-bottom: 18px;
+}
+
+.lp-badge {
+  display: inline-block;
+  background: #0f6a37;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.15;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 106, 55, 0.16);
+  margin-bottom: 26px;
+}
+
+.lp-h1 {
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  font-weight: 800;
+  max-width: 520px;
+}
+
+.lp-sub {
+  margin: 0;
+  color: rgba(11, 43, 32, 0.6);
+  font-size: 15px;
+  max-width: 420px;
+}
+
+/* Hero Cards / Right Column */
+.lp-hero-right {
+  position: relative;
+}
+
+.lp-hero-stack {
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 10px;
+}
+
+.lp-hero-card {
+  width: 100%;
+  border-radius: 28px;
+  background: #d7d7d7;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(11, 43, 32, 0.10);
+  border: 1px solid rgba(11, 43, 32, 0.06);
+}
+
+.lp-hero-photo {
+  height: 170px;
+}
+
+.lp-hero-image {
+  height: 150px;
+}
+
+.lp-hero-card-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(11, 43, 32, 0.45);
+}
+
+.lp-hero-mini {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 14px 16px;
+  box-shadow: 0 14px 32px rgba(11, 43, 32, 0.08);
+  border: 1px solid rgba(11, 43, 32, 0.06);
+}
+
+.lp-hero-mini-title {
+  font-weight: 800;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.lp-hero-mini-sub {
+  font-size: 13px;
+  color: rgba(11, 43, 32, 0.65);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   FLOATING ACTION BUTTONS
+   ========================================================================== */
+
+.lp-float {
+  position: absolute;
+  right: -34px;
+  top: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.lp-float-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 43, 32, 0.08);
+  box-shadow: 0 14px 28px rgba(11, 43, 32, 0.10);
+  cursor: pointer;
+  color: rgba(11, 43, 32, 0.75);
+  display: grid;
+  place-items: center;
+}
+
+.lp-float-owl {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: #0f6a37;
+  border: 0;
+  box-shadow: 0 16px 32px rgba(15, 106, 55, 0.22);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lp-owl-eye {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 999px;
+  position: relative;
+}
+
+.lp-owl-eye::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(11, 43, 32, 0.9);
+  left: 3px;
+  top: 3px;
+}
+
+/* ==========================================================================
+   SUPPORT SECTIONS & ROWS
+   ========================================================================== */
+
+.lp-support {
+  padding: 22px 0 40px;
+}
+
+.lp-support-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.lp-row {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Illustration Cards */
+.lp-illus-card {
+  background: #e7f6ee;
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(11, 43, 32, 0.06);
+  box-shadow: 0 18px 36px rgba(11, 43, 32, 0.07);
+  position: relative;
+  overflow: hidden;
+  min-height: 170px;
+}
+
+.lp-illus-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 106, 55, 0.16) 1px, transparent 1px);
+  background-size: 38px 38px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.lp-illus-top {
+  position: relative;
+  z-index: 1;
+}
+
+.lp-illus-title {
+  font-weight: 800;
+  color: #0b2b20;
+  font-size: 15px;
+  line-height: 1.2;
+  max-width: 260px;
+}
+
+/* Decorative Art Blocks */
+.lp-illus-art {
+  position: relative;
+  z-index: 1;
+  margin-top: 16px;
+  height: 90px;
+}
+
+.lp-art-robot {
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  width: 140px;
+  height: 90px;
+}
+
+.lp-robot-head {
+  width: 64px;
+  height: 44px;
+  border-radius: 14px;
+  background: #0f6a37;
+  box-shadow: 0 10px 24px rgba(15, 106, 55, 0.18);
+}
+
+.lp-robot-body {
+  margin-top: 10px;
+  width: 96px;
+  height: 44px;
+  border-radius: 16px;
+  background: #d7f2e4;
+  border: 2px solid rgba(15, 106, 55, 0.35);
+}
+
+.lp-person {
+  position: absolute;
+  bottom: 0;
+  width: 86px;
+  height: 86px;
+  border-radius: 999px 999px 18px 18px;
+  background: rgba(15, 106, 55, 0.22);
+}
+
+.lp-person.p1 { left: 0; height: 80px; }
+.lp-person.p2 { left: 96px; height: 88px; background: rgba(15, 106, 55, 0.16); }
+
+/* Translucent Image Treatments */
+.lp-illus-media {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+  height: 110px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.lp-illus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  filter: saturate(0.6) contrast(0.95) brightness(1.05);
+  transform: scale(1.02);
+}
+
+.lp-illus-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(231, 246, 238, 0.78) 0%,
+    rgba(231, 246, 238, 0.45) 55%,
+    rgba(231, 246, 238, 0.78) 100%
+  );
+  pointer-events: none;
+}
+
+/* Row Content & CTA */
+.lp-row-text {
+  max-width: 520px;
+}
+
+.lp-p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(11, 43, 32, 0.7);
+}
+
+.lp-row-cta {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lp-cta {
+  border: 0;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #0f6a37;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  box-shadow: 0 14px 32px rgba(15, 106, 55, 0.22);
+}
+
+/* ==========================================================================
+   FOOTER BAR
+   ========================================================================== */
+
+.lp-footer-pad {
+  padding: 34px 0 70px;
+}
+
+.lp-footer-bar {
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(11, 43, 32, 0.08);
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .lp-nav-inner,
+  .lp-container {
+    width: min(1200px, calc(100% - 48px));
+  }
+
+  .lp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .lp-hero-stack {
+    margin-left: 0;
+    max-width: 680px;
+  }
+
+  .lp-float {
+    right: 10px;
+    top: 190px;
+  }
+
+  .lp-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .lp-row-text {
+    max-width: 680px;
+  }
+
+  .lp-row-cta {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .lp-nav-inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .lp-nav-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .lp-nav-actions {
+    justify-content: flex-start;
+  }
+
+  .lp-h1 {
+    font-size: 28px;
+  }
+
+  .lp-badge {
+    font-size: 16px;
+  }
+}
