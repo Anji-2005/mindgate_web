@@ -1,22 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login'; // Ensure Login.jsx and Login.css are in the same folder
-import Signup from './components/Signup';
-import Help from './components/Help';
-import About from './components/About';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+import LandingPage from "./pages/LandingPage";
+import Login from "./components/Login";
+import PersonalPage from "./pages/PersonalPage";
+import TalkToHumanPage from "./pages/TalkToHumanPage";
+
+export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/help" element={<Help />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/personal" element={<PersonalPage />} />
+        <Route path="/human" element={<TalkToHumanPage />} />
       </Routes>
     </Router>
   );
 }
 
-export default App;
