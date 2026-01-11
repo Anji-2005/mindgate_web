@@ -6,6 +6,8 @@ import TalkToHumanPage from "./pages/TalktoHumanPage";
 import SettingsPage from "./pages/SettingsPage";
 import FindTherapistPage from "./pages/FindTherapistPage";
 import TherapistBookSession from "./pages/TherapistBookSession";
+import FindActiveListenerPage from "./pages/FindActiveListenerPage";
+import ActiveListenerBookSession from "./pages/ActiveListenerBookSession";
 
 // Tejas pages (inside components folder)
 import Login from "./components/Login";
@@ -33,6 +35,8 @@ export default function App() {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/find-therapist" element={<FindTherapistPage />} />
           <Route path="/book-session/:id" element={<TherapistBookSession />} />
+          <Route path="/find-active-listener" element={<FindActiveListenerPage />} />
+          <Route path="/active-listener-book-session/:id" element={<ActiveListenerBookSession />} />
         </Routes>
       </div>
     </Router>
