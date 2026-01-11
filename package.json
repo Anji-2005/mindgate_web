@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "framer-motion": "^12.23.26",
+    "aos": "^2.3.4",
+    "framer-motion": "^12.24.0",
     "lucide-react": "^0.562.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",

@@ -8,31 +8,58 @@ import "./TalktoHumanPage.css";
 export default function TalkToHuman() {
   const navigate = useNavigate();
 
-  /* ========= Mouse + Scroll Background Motion ========= */
+  /* ========= Background motion: reuse LandingPage scroll + mouse parallax ========= */
   useEffect(() => {
     const root = document.documentElement;
 
-    const handleMotion = (e) => {
+    let latestEvent = null;
+    let rafId = null;
+
+    const update = () => {
+      rafId = null;
+
       const y = window.scrollY || 0;
-      const mouseX = e ? (e.clientX / window.innerWidth - 0.5) * 40 : 0;
-      const mouseY = e ? (e.clientY / window.innerHeight - 0.5) * 40 : 0;
+
+      const mouseX = latestEvent
+        ? (latestEvent.clientX / window.innerWidth - 0.5) * 40
+        : 0;
+
+      const mouseY = latestEvent
+        ? (latestEvent.clientY / window.innerHeight - 0.5) * 40
+        : 0;
 
       const bgx = Math.sin(y * 0.002) * 30 + mouseX;
       const bgy = Math.cos(y * 0.002) * 20 + mouseY;
-      const rot = (y * 0.04) % 360;
 
       root.style.setProperty("--bgx", `${bgx.toFixed(2)}px`);
       root.style.setProperty("--bgy", `${bgy.toFixed(2)}px`);
-      root.style.setProperty("--bgrot", `${rot.toFixed(2)}deg`);
+      // Optional fade variable if you want to dim background further down the page
+      root.style.setProperty("--bgfade", "1");
     };
 
-    handleMotion();
-    window.addEventListener("scroll", handleMotion, { passive: true });
-    window.addEventListener("mousemove", handleMotion);
-    
+    const requestUpdate = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(update);
+    };
+
+    const onMouseMove = (e) => {
+      latestEvent = e;
+      requestUpdate();
+    };
+
+    const onScroll = () => {
+      requestUpdate();
+    };
+
+    requestUpdate();
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
-      window.removeEventListener("scroll", handleMotion);
-      window.removeEventListener("mousemove", handleMotion);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("scroll", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -72,10 +99,12 @@ export default function TalkToHuman() {
               transition={{ duration: 0.8 }}
             >
               <h1>Connect with Compassion: Talk to a Human</h1>
-              <p>
-                Our dedicated team is here to provide you with the emotional support 
-                you need. Choose your path to healing and connection today.
-              </p>
+              <div className="tth-hero-desc-box">
+                <p>
+                  Our dedicated team is here to provide you with the emotional support
+                  you need. Choose your path to healing and connection today.
+                </p>
+              </div>
               <div className="tth-hero-btns">
                 <button className="btn-outline">Explore Support Options</button>
                 <button className="btn-filled">Begin Your Journey</button>
@@ -86,53 +115,61 @@ export default function TalkToHuman() {
               </div>
             </motion.div>
             
-            {/* Animated Graphic */}
-            <motion.div 
-              className="tth-hero-graphic"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <div className="abstract-shape shape-1"></div>
-              <div className="abstract-shape shape-2"></div>
-              <div className="abstract-shape shape-3"></div>
-            </motion.div>
+          {/* Hero Graphic: doctor video inside the card */}
+          <motion.div 
+            className="tth-hero-graphic"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <video
+              className="tth-hero-media"
+              src="/doctor.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </motion.div>
           </div>
         </section>
 
-        {/* Support Selection Grid with staggered reveal */}
-        <section className="tth-support-selection">
-          <div className="tth-container-grid">
-            <motion.h2
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-            >
-              Choose Your Support Type
-            </motion.h2>
-            
-            <div className="tth-grid">
-              {supportTypes.map((type, index) => (
-                <motion.div 
-                  key={index} 
-                  className="support-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
-                  <div className="card-icon">{type.icon}</div>
-                  <h3>{type.title}</h3>
-                  <p>{type.description}</p>
-                </motion.div>
-              ))}
+        {/* Lower area: support grid + footer share same green background */}
+        <div className="tth-lower-bg">
+          {/* Support Selection Grid with staggered reveal */}
+          <section className="tth-support-selection">
+            <div className="tth-container-grid">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                Choose Your Support Type
+              </motion.h2>
+              
+              <div className="tth-grid">
+                {supportTypes.map((type, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="support-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                  >
+                    <div className="card-icon">{type.icon}</div>
+                    <h3>{type.title}</h3>
+                    <p>{type.description}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
 
-      <Footer />
+          <Footer />
+        </div>
+      </main>
     </div>
   );
 }
