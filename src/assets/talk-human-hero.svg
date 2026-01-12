@@ -1,0 +1,83 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background blob -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E6FFF4"/>
+      <stop offset="0.4" stop-color="#C5F5E0"/>
+      <stop offset="1" stop-color="#6ABF96"/>
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="pantsGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#064E3B"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="logoRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20" y="-20" width="640" height="440" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0F766E" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded card background -->
+  <g filter="url(#cardShadow)">
+    <rect x="32" y="26" width="536" height="348" rx="32" fill="url(#bgGrad)"/>
+  </g>
+
+  <!-- Subtle inner highlight -->
+  <rect x="52" y="46" width="496" height="308" rx="28" fill="white" fill-opacity="0.32"/>
+
+  <!-- Person group -->
+  <g transform="translate(150,80)">
+    <!-- Neck -->
+    <rect x="124" y="68" width="24" height="32" rx="10" fill="#F4C7A3"/>
+
+    <!-- Head -->
+    <circle cx="136" cy="52" r="32" fill="#F9D3AE"/>
+    <!-- Hair -->
+    <path d="M104 56C106 33 122 20 138 20C156 20 170 34 172 56C162 52 151 50 138 50C124 50 113 52 104 56Z" fill="#065F46"/>
+    <!-- Face details (minimal) -->
+    <circle cx="127" cy="54" r="3" fill="#14532D"/>
+    <circle cx="147" cy="54" r="3" fill="#14532D"/>
+    <path d="M126 66C130 70 144 70 148 66" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Torso -->
+    <path d="M84 92C96 80 112 72 136 72C160 72 178 80 188 92C200 106 206 126 206 152C206 176 204 194 200 210H72C68 194 66 176 66 152C66 126 72 106 84 92Z" fill="url(#shirtGrad)"/>
+
+    <!-- Left leg -->
+    <path d="M112 210H94L82 282C80 292 86 300 96 300C106 300 112 292 114 282L122 234L112 210Z" fill="url(#pantsGrad)"/>
+    <!-- Right leg -->
+    <path d="M160 210H178L190 282C192 292 186 300 176 300C166 300 160 292 158 282L150 234L160 210Z" fill="url(#pantsGrad)"/>
+
+    <!-- Left arm down -->
+    <path d="M82 110C68 118 60 132 60 150C60 164 66 178 74 188L92 176C88 170 86 162 86 154C86 144 90 134 96 126L82 110Z" fill="#16A34A"/>
+
+    <!-- Right arm reaching out holding logo -->
+    <path d="M190 110L214 130C232 146 244 168 248 192L228 196C224 178 214 162 200 150L182 134L190 110Z" fill="#16A34A"/>
+
+    <!-- Hand under logo -->
+    <ellipse cx="246" cy="192" rx="18" ry="10" fill="#F9D3AE"/>
+  </g>
+
+  <!-- MindGate logo coin in hand -->
+  <g transform="translate(360,150)">
+    <circle cx="64" cy="64" r="44" fill="white"/>
+    <circle cx="64" cy="64" r="40" fill="url(#logoRing)"/>
+    <circle cx="64" cy="64" r="30" fill="#ECFDF5"/>
+    <!-- Stylised "G" gate mark -->
+    <path d="M64 40C51 40 40 51 40 64C40 77 51 88 64 88C74 88 83 82 87 72H74" stroke="#065F46" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="64" cy="64" r="6" fill="#10B981"/>
+  </g>
+
+  <!-- Soft chat bubbles near head to imply talking -->
+  <g opacity="0.9">
+    <rect x="360" y="70" width="90" height="40" rx="16" fill="#ECFDF5"/>
+    <circle cx="360" cy="102" r="10" fill="#ECFDF5"/>
+    <circle cx="460" cy="96" r="6" fill="#D1FAE5"/>
+    <circle cx="444" cy="64" r="10" fill="#BBF7D0"/>
+  </g>
+</svg>

@@ -33,6 +33,22 @@ const About = () => {
   return (
     <div className="about-page-scope">
       
+      {/* --- Floating Plus Signs --- */}
+      <div className="floating-elements">
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+        <div className="floating-plus">+</div>
+      </div>
+      
       {/* --- Navbar --- */}
       <nav className="about-navbar">
         <div className="about-logo-container">
@@ -53,18 +69,18 @@ const About = () => {
         <div className="about-hero-content">
           
           <div className="about-dual-scroll-wrapper">
-  {/* Top Row: Left to Right */}
-  <div className="about-scroll-track move-right">
-    {[...imageList1, ...imageList1].map((img, index) => (
+  {/* Top Row: Constant left-to-right animation */}
+  <div className="about-scroll-track">
+    {[...imageList1, ...imageList1, ...imageList1].map((img, index) => (
       <div className="about-scroll-card-small" key={`top-${index}`}>
         <img src={img} alt="Community" />
       </div>
     ))}
   </div>
 
-  {/* Bottom Row: Right to Left */}
-  <div className="about-scroll-track move-left">
-    {[...imageList2, ...imageList2].map((img, index) => (
+  {/* Bottom Row: Constant right-to-left animation */}
+  <div className="about-scroll-track">
+    {[...imageList2, ...imageList2, ...imageList2].map((img, index) => (
       <div className="about-scroll-card-small" key={`bottom-${index}`}>
         <img src={img} alt="Community" />
       </div>
@@ -156,6 +172,20 @@ const About = () => {
       {/* --- Team / Community Story --- */}
       <section className="about-story-section">
         <div className="about-story-content">
+          {/* Avatar Section */}
+          <div className="about-avatar-section">
+            <div className="avatar-container">
+              <div className="avatar-circle">
+                <div className="avatar-initials">MG</div>
+                <div className="avatar-pulse"></div>
+              </div>
+              <div className="avatar-speech-bubble">
+                <p>"At Mindgate, we believe mental health care should be accessible, confidential, and compassionate. We're here to support you every step of the way."</p>
+                <div className="bubble-arrow"></div>
+              </div>
+            </div>
+          </div>
+
           <div className="about-story-text">
             <h2>Built by people who've been there.</h2>
             <p>
@@ -176,7 +206,8 @@ const About = () => {
               </div>
             </div>
           </div>
-          {/* Decorative shapes for visual interest instead of an image file */}
+          
+          {/* Letter Box */}
           <div className="about-story-visual">
             <div className="visual-circle circle-1"></div>
             <div className="visual-circle circle-2"></div>
