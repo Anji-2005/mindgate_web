@@ -28,13 +28,15 @@ export default function Hero() {
               toward the support you deserve.
             </motion.div>
 
-            <h1 className="lp-h1">
-              Explore the ways we
-              <br />
-              support your mental
-              <br />
-              wellbeing
-            </h1>
+            <div className="lp-h1-wrap">
+              <h1 className="lp-h1 lp-h1-3d">
+                Explore the ways we
+                <br />
+                support your mental
+                <br />
+                wellbeing
+              </h1>
+            </div>
 
             <p className="lp-sub">Coming soon: A calm companion for your mind.</p>
 
@@ -52,7 +54,7 @@ export default function Hero() {
 
               <motion.button
                 className="lp-pillbtn"
-                onClick={() => navigate("/human")}
+                onClick={() => navigate("/talk-to-human")}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -61,6 +63,68 @@ export default function Hero() {
               </motion.button>
             </div>
           </motion.div>
+
+          {/* RIGHT SIDE - MINDGATE LOGO DROP-ON-FLOOR ANIMATION */}
+          <div className="lp-hero-right">
+            <motion.div
+              className="lp-logo-container"
+              initial={{ y: -260, scaleY: 0.9, scaleX: 1.05, opacity: 0 }}
+              animate={{
+                // Drop from above, hit the floor, then bounce a few times
+                y: [-260, 0, -36, 0, -14, 0],
+                scaleY: [0.9, 1.02, 0.92, 1.01, 0.97, 1],
+                scaleX: [1.05, 0.98, 1.05, 0.99, 1.02, 1],
+                rotate: [0, 0, -4, 3, -2, 0],
+                opacity: 1
+              }}
+              transition={{
+                duration: 1.6,
+                ease: "easeOut",
+                times: [0, 0.55, 0.72, 0.86, 0.94, 1],
+                repeat: Infinity,
+                repeatDelay: 3.5
+              }}
+            >
+              <motion.img
+                src="/mainlogo.png"
+                alt="Mindgate Logo"
+                className="lp-hero-logo"
+                whileHover={{
+                  scale: 1.08,
+                  rotate: 4,
+                  transition: { type: "spring", stiffness: 300, damping: 10 }
+                }}
+              />
+
+              {/* Ground shadow effect */}
+              <motion.div
+                className="lp-logo-shadow"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{
+                  // Shadow quickly appears and squashes on impact
+                  scaleX: [0, 1.4, 1.1, 1.2, 1.1, 1],
+                  scaleY: [0, 0.5, 0.7, 0.6, 0.7, 0.8],
+                  opacity: [0, 0.7, 0.4, 0.45, 0.4, 0.35]
+                }}
+                transition={{
+                  duration: 1.6,
+                  ease: "easeOut",
+                  times: [0, 0.55, 0.72, 0.86, 0.94, 1]
+                }}
+              />
+
+              {/* Soft floor strip the logo lands on */}
+              <motion.div
+                className="lp-logo-floor"
+                initial={{ scaleX: 0.4, opacity: 0 }}
+                animate={{
+                  scaleX: [0.4, 1.1, 0.95, 1],
+                  opacity: [0, 0.6, 0.7, 0.6]
+                }}
+                transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              />
+            </motion.div>
+          </div>
 
           {/* FLOATING BUTTONS */}
           <div className="lp-float">
