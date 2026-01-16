@@ -1,150 +1,252 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { User, Mail, Lock, ShieldCheck, Star, Menu, X } from 'lucide-react';
-import './Signup.css';
-import logoImg from '/mainlogo.png'; 
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { User, Mail, Lock, ShieldCheck, Star } from "lucide-react";
 
-const Signup = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+import Navbar from "./landing/Navbar";
+import "./Signup.css";
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+export default function Signup() {
+  const [agreed, setAgreed] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    // STRICT ISOLATION WRAPPER
-    <div id="signup-page-root">
-      
-      {/* --- Navbar (Scoped) --- */}
-      <nav className="signup-navbar">
-        <div className="signup-nav-container">
-          <div className="signup-logo">
-            <img src={logoImg} alt="Mindgate Logo" className="signup-logo-img" />
-            <span className="signup-brand-name">Mindgate</span>
-          </div>
-          
-          <div className="signup-menu-toggle" onClick={toggleMenu}>
-            {isMenuOpen ? <X size={24} color="#0f5132"/> : <Menu size={24} color="#0f5132"/>}
-          </div>
+    <div className="lp auth">
+      <div className="lp-bg" />
+      <Navbar />
 
-          <div className={`signup-nav-links ${isMenuOpen ? 'active' : ''}`}>
-            <a href="#" onClick={() => setIsMenuOpen(false)}>Home</a>
-            <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
-            <a href="#" onClick={() => setIsMenuOpen(false)}>For Psychologists</a>
-            <Link to="/help" onClick={() => setIsMenuOpen(false)}>Help</Link>
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>
-              <button className="signup-btn-nav">Log In</button>
-            </Link>
-          </div>
+      <main className="auth-main">
+        <div className="auth-container">
+          <motion.div
+            className="auth-grid auth-grid--signup"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            {/* LEFT: Hero / Testimonial */}
+            <motion.aside
+              className="auth-hero"
+              initial={{ opacity: 0, x: -120 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+            >
+              <motion.div
+                className="signup-hero-card"
+                whileHover={{ y: -4, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 220, damping: 18 }}
+              >
+                <div className="signup-hero-pill">Private • Secure • Calm</div>
+
+                <h2 className="signup-hero-h2">
+                  Find balance{" "}
+                  <span className="signup-hero-accent">in a chaotic world.</span>
+                </h2>
+
+                <p className="signup-hero-p">
+                  Join thousands of users connecting with licensed psychologists
+                  in a safe, secure, and private environment.
+                </p>
+
+                <div className="signup-testimonial">
+                  <div className="signup-stars" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={16} fill="#F59E0B" color="#F59E0B" />
+                    ))}
+                  </div>
+
+                  <p className="signup-quote">
+                    “Within two weeks of signing up, I matched with a therapist
+                    who truly understands my anxiety. The platform is intuitive
+                    and calming.”
+                  </p>
+
+                  <div className="signup-user">
+                    <img
+                      src="https://i.pravatar.cc/150?u=sarah"
+                      alt="Member avatar"
+                    />
+                    <div>
+                      <strong>Sarah Jenkins</strong>
+                      <span>Member since 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="signup-hero-footer">
+                  <button type="button" onClick={() => navigate("/help")}>
+                    Privacy Policy
+                  </button>
+                  <button type="button" onClick={() => navigate("/help")}>
+                    Terms of Service
+                  </button>
+                </div>
+              </motion.div>
+
+              <div className="auth-chips" aria-hidden="true">
+                <div className="auth-chip">Guided onboarding</div>
+                <div className="auth-chip">Verified pros</div>
+                <div className="auth-chip">Community support</div>
+              </div>
+            </motion.aside>
+
+            {/* RIGHT: Form */}
+            <motion.section
+              className="auth-form"
+              initial={{ opacity: 0, x: 120 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75, ease: "easeOut", delay: 0.05 }}
+            >
+              <div className="auth-form-inner">
+                <div className="auth-header">
+                  <h1 className="auth-h1">Create your account</h1>
+                  <p className="auth-sub">
+                    Already have an account?{" "}
+                    <Link to="/login" className="auth-link">
+                      Log in
+                    </Link>
+                  </p>
+                </div>
+
+                <div className="signup-social">
+                  <motion.button
+                    type="button"
+                    className="auth-google"
+                    whileHover={{ y: -1, scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 18 }}
+                  >
+                    <img
+                      src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    Google
+                  </motion.button>
+
+                  <motion.button
+                    type="button"
+                    className="signup-apple"
+                    whileHover={{ y: -1, scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 18 }}
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    Apple
+                  </motion.button>
+                </div>
+
+                <div className="auth-divider">
+                  <span>Or continue with</span>
+                </div>
+
+                <form
+                  className="auth-form-fields"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    // keep placeholder; wire signup later
+                  }}
+                >
+                  <div className="auth-field">
+                    <label className="auth-label">Full Name</label>
+                    <div className="signup-inputWrap">
+                      <input
+                        className="auth-input signup-input"
+                        type="text"
+                        placeholder="e.g. Jane Doe"
+                        autoComplete="name"
+                      />
+                      <User size={18} className="signup-icon" />
+                    </div>
+                  </div>
+
+                  <div className="auth-field">
+                    <label className="auth-label">Email address</label>
+                    <div className="signup-inputWrap">
+                      <input
+                        className="auth-input signup-input"
+                        type="email"
+                        placeholder="you@example.com"
+                        autoComplete="email"
+                      />
+                      <Mail size={18} className="signup-icon" />
+                    </div>
+                  </div>
+
+                  <div className="auth-field">
+                    <label className="auth-label">Password</label>
+                    <div className="signup-inputWrap">
+                      <input
+                        className="auth-input signup-input"
+                        type="password"
+                        placeholder="••••••••"
+                        autoComplete="new-password"
+                      />
+                      <Lock size={18} className="signup-icon" />
+                    </div>
+                  </div>
+
+                  <div className="auth-field">
+                    <label className="auth-label">Confirm Password</label>
+                    <div className="signup-inputWrap">
+                      <input
+                        className="auth-input signup-input"
+                        type="password"
+                        placeholder="••••••••"
+                        autoComplete="new-password"
+                      />
+                      <ShieldCheck size={18} className="signup-icon" />
+                    </div>
+                  </div>
+
+                  <label className="signup-terms">
+                    <input
+                      type="checkbox"
+                      checked={agreed}
+                      onChange={(e) => setAgreed(e.target.checked)}
+                    />
+                    <span>
+                      I agree to the <strong>Terms of Service</strong> and
+                      acknowledge the <strong>Privacy Policy</strong>.
+                    </span>
+                  </label>
+
+                  <motion.button
+                    type="submit"
+                    className="lp-cta auth-submit"
+                    disabled={!agreed}
+                    whileHover={agreed ? { scale: 1.05, y: -2 } : undefined}
+                    whileTap={agreed ? { scale: 0.97 } : undefined}
+                    transition={{ type: "spring", stiffness: 320, damping: 18 }}
+                    style={{
+                      opacity: agreed ? 1 : 0.6,
+                      cursor: agreed ? "pointer" : "not-allowed",
+                    }}
+                  >
+                    Create Account →
+                  </motion.button>
+
+                  <div className="signup-secure">
+                    <ShieldCheck size={14} />
+                    <span>256-bit SSL Secure Encryption</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="auth-backhome"
+                    onClick={() => navigate("/")}
+                  >
+                    ← Back to home
+                  </button>
+                </form>
+              </div>
+            </motion.section>
+          </motion.div>
         </div>
-      </nav>
-
-      {/* --- Main Content --- */}
-      <div className="signup-container">
-        
-        {/* Left Side: Branding */}
-        <div className="signup-hero">
-          <div className="hero-main-content">
-            <h1>Find balance </h1>
-            <h1><div className="hero-main-content-div">in a chaotic world.</div></h1>
-            <p>Join thousands of users connecting with licensed psychologists in a safe, secure, and private environment.</p>
-            
-            <div className="testimonial-card">
-              <div className="stars">
-                {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="#FFD700" color="#FFD700" />)}
-              </div>
-              <p>"Within two weeks of signing up, I matched with a therapist who truly understands my anxiety. The platform is intuitive and calming."</p>
-              <div className="testimonial-user">
-                <img src="https://i.pravatar.cc/150?u=sarah" alt="Sarah Jenkins" />
-                <div>
-                  <strong>Sarah Jenkins</strong>
-                  <span>Member since 2025</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-footer">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
-        </div>
-
-        {/* Right Side: Form */}
-        <div className="signup-form-section">
-          <div className="signup-form-container">
-            <h2>Create your account</h2>
-            <p className="login-redirect">
-              Already have an account? <Link to="/">Log in</Link>
-            </p>
-
-            <div className="social-auth">
-              <button className="social-btn">
-                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-                Google
-              </button>
-              <button className="social-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
-                Apple
-              </button>
-            </div>
-
-            <div className="signup-divider">
-              <span>Or continue with</span>
-            </div>
-
-            <form>
-              <div className="signup-input-group">
-                <label>Full Name</label>
-                <div className="input-with-icon">
-                  <input type="text" placeholder="e.g. Jane Doe" />
-                  <User size={18} className="input-icon" />
-                </div>
-              </div>
-
-              <div className="signup-input-group">
-                <label>Email address</label>
-                <div className="input-with-icon">
-                  <input type="email" placeholder="you@example.com" />
-                  <Mail size={18} className="input-icon" />
-                </div>
-              </div>
-
-              <div className="signup-input-group">
-                <label>Password</label>
-                <div className="input-with-icon">
-                  <input type="password" placeholder="••••••••" />
-                  <Lock size={18} className="input-icon" />
-                </div>
-              </div>
-
-              <div className="signup-input-group">
-                <label>Confirm Password</label>
-                <div className="input-with-icon">
-                  <input type="password" placeholder="••••••••" />
-                  <ShieldCheck size={18} className="input-icon" />
-                </div>
-              </div>
-
-              <div className="terms-checkbox">
-                <input type="checkbox" id="terms" />
-                <label htmlFor="terms">
-                  I agree to the <strong>Terms of Service</strong> and acknowledge the <strong>Privacy Policy</strong>.
-                </label>
-              </div>
-
-              <button type="submit" className="create-account-btn">Create Account</button>
-            </form>
-
-            <div className="encryption-notice">
-              <ShieldCheck size={14} />
-              <span>256-bit SSL Secure Encryption</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
   );
-};
-
-export default Signup;
+}

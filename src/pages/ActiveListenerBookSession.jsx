@@ -74,6 +74,10 @@ export default function ActiveListenerBookSession() {
   const [mmYY, setMmYY] = useState("");
   const [cvc, setCvc] = useState("");
 
+  // ✅ ADDED (VIDEO CALL LOGIC) — minimal, does not affect existing UI
+  const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [roomId, setRoomId] = useState(null);
+
   const dateLabel = useMemo(() => {
     if (!selectedDate) return "";
     return selectedDate.toLocaleDateString(undefined, {
@@ -84,6 +88,11 @@ export default function ActiveListenerBookSession() {
   }, [selectedDate]);
 
   const confirmBooking = () => {
+    // ✅ ADDED: generate roomId + enable Join button
+    const generatedRoomId = `listener-${Date.now()}`;
+    setRoomId(generatedRoomId);
+    setBookingConfirmed(true);
+
     alert(
       `✅ Booking Confirmed!\n\nListener: ${listener.name}\nDate: ${selectedDate.toDateString()}\nTime: ${selectedTime}\nFocus: ${focus}\nTotal: $${total}`
     );
@@ -301,9 +310,21 @@ export default function ActiveListenerBookSession() {
                 <button className="albs-btn albs-btnGhost" type="button" onClick={() => setStep(2)}>
                   Back
                 </button>
+
                 <button className="albs-btn albs-btnPrimary" type="button" onClick={confirmBooking}>
                   Confirm Booking →
                 </button>
+
+                {bookingConfirmed && (
+                  <button
+                    className="albs-btn albs-btnPrimary"
+                    style={{ marginLeft: "12px" }}
+                    type="button"
+                    onClick={() => navigate(`/listener-call/${roomId}`)}
+                  >
+                    Join Call
+                  </button>
+                )}
               </div>
             </div>
           </section>
@@ -312,3 +333,4 @@ export default function ActiveListenerBookSession() {
     </div>
   );
 }
+

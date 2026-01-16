@@ -25,7 +25,7 @@ export default function Navbar() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/human");
+      navigate("/talk-to-human");
     }
   };
 

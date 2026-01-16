@@ -8,12 +8,14 @@ import FindTherapistPage from "./pages/FindTherapistPage";
 import TherapistBookSession from "./pages/TherapistBookSession";
 import FindActiveListenerPage from "./pages/FindActiveListenerPage";
 import ActiveListenerBookSession from "./pages/ActiveListenerBookSession";
+import PsychologistCall from "./pages/PsychologistCall";
+import ListenerCall from "./pages/ListenerCall";
 
 // Tejas pages (inside components folder)
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Help from "./components/Help";
-import About from "./components/About";
+import Help from "./components/Help.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import About from "./components/About.jsx";
 
 export default function App() {
   return (
@@ -35,8 +37,16 @@ export default function App() {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/find-therapist" element={<FindTherapistPage />} />
           <Route path="/book-session/:id" element={<TherapistBookSession />} />
-          <Route path="/find-active-listener" element={<FindActiveListenerPage />} />
-          <Route path="/active-listener-book-session/:id" element={<ActiveListenerBookSession />} />
+          <Route
+            path="/find-active-listener"
+            element={<FindActiveListenerPage />}
+          />
+          <Route
+            path="/active-listener-book-session/:id"
+            element={<ActiveListenerBookSession />}
+          />
+          <Route path="/psychologist-call/:roomId" element={<PsychologistCall />} />
+          <Route path="/listener-call/:roomId" element={<ListenerCall />} />
         </Routes>
       </div>
     </Router>

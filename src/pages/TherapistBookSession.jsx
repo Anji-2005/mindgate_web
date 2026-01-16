@@ -80,6 +80,9 @@ export default function TherapistBookSession() {
 
   const [selectedDate, setSelectedDate] = useState(weekDays[0]);
   const [selectedTime, setSelectedTime] = useState("11:00 AM");
+  const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [roomId, setRoomId] = useState(null);
+
 
   const [focus, setFocus] = useState("General Anxiety");
   const [notes, setNotes] = useState("");
@@ -101,12 +104,16 @@ export default function TherapistBookSession() {
   const canGoPayment = Boolean(focus);
 
   const confirmBooking = () => {
-    // UI-only: you will replace with API call later
+    const generatedRoomId = `psy-${Date.now()}`;
+
+    setRoomId(generatedRoomId);
+    setBookingConfirmed(true);
+
     alert(
-      `✅ Booking Confirmed!\n\nTherapist: ${therapist.name}\nDate: ${selectedDate.toDateString()}\nTime: ${selectedTime}\nFocus: ${focus}\nTotal: $${total}`
+    `   ✅ Booking Confirmed!\n\nTherapist: ${therapist.name}\nDate: ${selectedDate.toDateString()}\nTime: ${selectedTime}\nFocus: ${focus}\nTotal: $${total}`
     );
-    // navigate("/dashboard"); // if you have a dashboard route
   };
+
 
   const dateLabel = useMemo(() => {
     if (!selectedDate) return "";
@@ -392,6 +399,18 @@ export default function TherapistBookSession() {
                 >
                   Confirm Booking →
                 </button>
+
+                {bookingConfirmed && (
+                    <button
+                        type="button"
+                        className="bs-btn bs-btnPrimary"
+                        style={{ marginLeft: "12px" }}
+                        onClick={() => navigate(`/psychologist-call/${roomId}`)}
+                    >
+                        Join Video Session
+                    </button>
+                )}
+
               </div>
             </div>
           </section>
