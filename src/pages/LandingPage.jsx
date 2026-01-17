@@ -1,3 +1,4 @@
+// LandingPage.jsx
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -198,7 +199,7 @@ export default function LandingPage() {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
-                    onClick={() => navigate("/human")}
+                    onClick={() => navigate("/talk-to-human")}
                   >
                     Talk to a Human →
                   </motion.button>
@@ -240,15 +241,25 @@ export default function LandingPage() {
                   A supportive starting point that reminds you you’re not alone.
                 </p>
 
-                <div className="lp-row-cta">
+                <div className="lp-row-cta lp-row-cta--split">
                   <motion.button
                     className="lp-cta"
-                    onClick={() => navigate("/community")}
+                    onClick={() => navigate("/find-therapist")}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
                   >
-                    Explore →
+                    Find Therapist →
+                  </motion.button>
+
+                  <motion.button
+                    className="lp-cta"
+                    onClick={() => navigate("/find-active-listener")}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 18 }}
+                  >
+                    Find Active Listener →
                   </motion.button>
                 </div>
               </div>

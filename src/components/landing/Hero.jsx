@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import SupportChatWidget from "../SupportChatWidget";
 
 export default function Hero() {
   const navigate = useNavigate();
+  const [supportOpen, setSupportOpen] = useState(false);
 
   return (
     <section className="lp-hero">
@@ -157,13 +160,14 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 380, damping: 18 }}
               aria-label="Book active listener"
-              onClick={() => navigate("/active-listener-booking")}
+              onClick={() => setSupportOpen(true)}
             >
               ✦
             </motion.button>
           </div>
         </div>
       </div>
+      <SupportChatWidget open={supportOpen} onClose={() => setSupportOpen(false)} />
     </section>
   );
 }
