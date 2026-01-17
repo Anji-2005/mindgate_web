@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import SupportChatWidget from "./SupportChatWidget";
 import {
   Search,
   ChevronDown,
@@ -427,45 +428,7 @@ export default function Help() {
       )}
 
       {/* CHAT WIDGET */}
-      {isChatOpen && (
-        <motion.div
-          className="help-chat"
-          initial={{ opacity: 0, y: 14, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-        >
-          <div className="help-chatHead">
-            <div className="help-chatTitle">
-              <span className="help-dot" />
-              <span>Mindgate Support</span>
-            </div>
-            <button onClick={() => setIsChatOpen(false)} aria-label="Close chat">
-              <X size={18} />
-            </button>
-          </div>
-
-          <div className="help-chatBody">
-            {chatMessages.map((msg) => (
-              <div key={msg.id} className={`help-msg ${msg.sender}`}>
-                {msg.text}
-              </div>
-            ))}
-            <div ref={chatEndRef} />
-          </div>
-
-          <form className="help-chatFoot" onSubmit={handleSendMessage}>
-            <input
-              type="text"
-              placeholder="Type a message..."
-              value={chatInput}
-              onChange={(e) => setChatInput(e.target.value)}
-            />
-            <button type="submit" aria-label="Send">
-              <Send size={16} />
-            </button>
-          </form>
-        </motion.div>
-      )}
+      <SupportChatWidget open={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
   );
 }
