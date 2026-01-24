@@ -28,6 +28,10 @@ const imageList2 = [
 const About = () => {
   return (
     <div className="about-page-scope">
+<<<<<<< HEAD
+      <div className="about-bg" />
+=======
+>>>>>>> origin/main
       {/* --- Floating Plus Signs (matched to your About.css classes) --- */}
       <div className="about-float" aria-hidden="true">
         <div className="about-plus">+</div>

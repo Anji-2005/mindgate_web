@@ -3,9 +3,30 @@
   background: #f6fbf7;
   color: #0b2b20;
   min-height: 100vh;
+<<<<<<< HEAD
+  position: relative;
+}
+
+.ft-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../assets/abstractbg.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  filter: blur(40px);
 }
 
 .ft-wrap {
+  position: relative;
+  z-index: 1;
+=======
+}
+
+.ft-wrap {
+>>>>>>> origin/main
   max-width: 1120px;
   margin: 0 auto;
   padding: 18px 18px 28px;
@@ -506,4 +527,17 @@
   .ft-header h1 {
     font-size: 28px;
   }
+<<<<<<< HEAD
+
+  .ft-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ft-doctorR .ft-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+=======
+>>>>>>> origin/main
 }

@@ -1,6 +1,88 @@
 /* Universal Font */
 * { font-family: 'Poppins', sans-serif !important; box-sizing: border-box; }
 
+<<<<<<< HEAD
+.pg { display: flex; height: 100vh; width: 100vw; background-color: transparent; overflow: hidden; position: relative; }
+
+/* Sidebar */
+.side { 
+  width: 280px; 
+  background: rgba(215, 242, 228, 0.7); 
+  border-right: 1px solid rgba(15, 106, 55, 0.1); 
+  display: flex; 
+  flex-direction: column; 
+  padding: 24px; 
+  z-index: 40; 
+  transition: transform 0.3s ease;
+}
+
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+  background: rgba(215, 242, 228, 0.7);
+  border: 1px solid rgba(15, 106, 55, 0.1);
+  padding: 8px;
+  border-radius: 12px;
+  color: #0b2b20;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 106, 55, 0.1);
+}
+
+.side-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 58, 37, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 35;
+}
+
+.logo { font-weight: 800; font-size: 28px; color: #0b2b20; letter-spacing: -0.04em; margin-bottom: 10px; }
+.divider { height: 1px; border-bottom: 1px dashed rgba(15, 106, 55, 0.1); margin: 20px 0; }
+.nav-group { flex: 1; }
+.sideBtn { width: 100%; text-align: left; padding: 14px 16px; margin: 6px 0; border: none; background: transparent; border-radius: 12px; font-weight: 600; color: #0b2b20; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: background 0.2s; }
+.sideBtn.active { background: #d7f2e4; }
+.sideBtn:hover:not(.active) { background: #d7f2e4; opacity: 0.6; }
+.sideBottom { margin-top: auto; padding-bottom: 10px; }
+.settings-btn { font-size: 15px; font-weight: 500; color: rgba(11, 43, 32, 0.6); opacity: 0.7; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; transition: background 0.2s; }
+.settings-btn:hover { background: #d7f2e4; opacity: 1; }
+
+/* Main Content */
+.main { flex: 1; display: flex; flex-direction: column; position: relative; overflow-y: auto; }
+
+/* Restoring the original Aesthetic Buttons */
+.chat-container { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  width: 100%; 
+  max-width: 900px; 
+  margin: 0 auto; 
+  z-index: 10; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 40px 20px;
+}
+.topRow { position: absolute; top: 30px; right: 40px; z-index: 30; }
+.newChat { background: #0f6a37; color: white; border: none; padding: 12px 24px; border-radius: 99px; cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(15, 106, 55, 0.1); }
+
+.center-content { text-align: center; width: 100%; }
+.title { font-size: clamp(32px, 8vw, 72px); font-weight: 800; color: #0b2b20; margin-bottom: 10px; letter-spacing: -0.05em; }
+.subtitle { color: rgba(11, 43, 32, 0.6); font-size: clamp(16px, 4vw, 20px); opacity: 0.7; margin-bottom: 50px; }
+
+/* Fixed Quick Buttons */
+.quickRow { display: flex; justify-content: center; gap: 20px; width: 100%; padding: 0; }
+.quick { 
+  background: #ffffff; 
+  border: 2px solid #0f6a37; 
+  padding: 20px 30px; 
+  border-radius: 20px; 
+  font-weight: 700; 
+  color: #0b2b20; 
+=======
 .pg { display: flex; height: 100vh; width: 100vw; background-color: #f1faf5; overflow: hidden; }
 
 /* Sidebar */
@@ -37,24 +119,78 @@
   border-radius: 20px; 
   font-weight: 700; 
   color: #0d3a25; 
+>>>>>>> origin/main
   cursor: pointer; 
   flex: 1; 
   font-size: 16px;
   transition: 0.2s;
+<<<<<<< HEAD
+  box-shadow: 0 4px 12px rgba(15, 106, 55, 0.1);
+}
+.quick:hover { background: #f6fbf7; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15, 106, 55, 0.1); }
+=======
 }
 .quick:hover { background: white; transform: translateY(-3px); }
+>>>>>>> origin/main
 
 /* Fixed Input Bar */
 .composer-wrapper { width: 100%; max-width: 850px; margin-top: 40px; }
 .composer { 
+<<<<<<< HEAD
+  background: #ffffff; 
+  border: 2.5px solid #0f6a37; 
+=======
   background: white; 
   border: 2.5px solid #0d3a25; 
+>>>>>>> origin/main
   border-radius: 40px; 
   display: flex; 
   align-items: center; 
   padding: 8px 10px 8px 24px; 
+<<<<<<< HEAD
+  box-shadow: 0 10px 30px rgba(15, 106, 55, 0.1);
+}
+.input { flex: 1; border: none; outline: none; font-size: 18px; padding: 10px 0; background: transparent; color: #0b2b20; }
+.plus, .send { background: #d7f2e4; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; transition: transform 0.2s; color: #0b2b20; }
+.plus:hover, .send:hover { transform: scale(1.05); }
+.send { background: #0f6a37; color: white; margin-left: 10px; font-size: 20px; }
+.tip { text-align: center; font-size: 13px; margin-top: 15px; color: rgba(11, 43, 32, 0.6); opacity: 0.5; }
+
+/* Responsive Overrides */
+@media (max-width: 960px) {
+  .title { font-size: 48px; }
+  .subtitle { font-size: 18px; margin-bottom: 30px; }
+  .quickRow { flex-direction: column; gap: 12px; }
+  .quick { padding: 16px 20px; font-size: 15px; }
+  .topRow { top: 20px; right: 20px; }
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle { display: block; }
+  .side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+  }
+  .side.open {
+    transform: translateX(0);
+  }
+  .side-overlay {
+    display: block;
+  }
+  .title { font-size: 36px; }
+  .topRow { display: none; } /* On mobile, move New Chat elsewhere or hide */
+  .composer-wrapper { margin-top: 20px; }
+  .composer { padding: 4px 6px 4px 16px; border-width: 2px; }
+  .input { font-size: 16px; }
+  .plus, .send { width: 38px; height: 38px; }
+}
+=======
 }
 .input { flex: 1; border: none; outline: none; font-size: 18px; padding: 10px 0; }
 .plus, .send { background: #e6f6ee; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
 .send { background: #0d3a25; color: white; margin-left: 10px; font-size: 20px; }
 .tip { text-align: center; font-size: 13px; margin-top: 15px; color: #0d3a25; opacity: 0.5; }
+>>>>>>> origin/main

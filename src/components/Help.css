@@ -646,6 +646,19 @@
     bottom: 0;
     border-radius: 0;
   }
+<<<<<<< HEAD
+
+  .help-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .help-contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+=======
+>>>>>>> origin/main
 }
 
 .help-chat-widget {

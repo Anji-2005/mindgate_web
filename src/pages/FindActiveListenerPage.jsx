@@ -98,6 +98,10 @@ export default function FindActiveListenerPage() {
 
   return (
     <div className="fa">
+<<<<<<< HEAD
+      <div className="fa-bg" />
+=======
+>>>>>>> origin/main
       <Navbar />
 
       <main className="fa-wrap">

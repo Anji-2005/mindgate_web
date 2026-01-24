@@ -12,9 +12,13 @@ export default function Login() {
 
   return (
     <div className="lp auth">
+<<<<<<< HEAD
+      <div className="lp-bg" />
+=======
       {/* same dynamic background layer as landing */}
       <div className="lp-bg" />
 
+>>>>>>> origin/main
       {/* ✅ your navbar */}
       <Navbar />
 

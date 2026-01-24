@@ -4,12 +4,17 @@
   overflow-x: hidden;
   min-height: 100vh;
   background: transparent;
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/main
   color: #0b2b20;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
     "Noto Sans", "Helvetica Neue", sans-serif;
 }
 
+<<<<<<< HEAD
+=======
 /* Fixed background layer for dynamic blobs */
 .tth-bg {
   position: fixed;
@@ -66,6 +71,7 @@
   pointer-events: none;
 }
 
+>>>>>>> origin/main
 /* Ensure content stays above the background */
 .tth-main, .tth-hero, .tth-support-selection {
   position: relative;
@@ -106,22 +112,78 @@
 /* Hero Section */
 .tth-hero {
   padding: 100px 0;
+<<<<<<< HEAD
+  /* Rich greenish glassy panel with a subtle gradient for depth */
+  background: linear-gradient(
+    165deg,
+    rgba(249, 251, 249, 0.88) 0%,
+    rgba(220, 252, 231, 0.75) 45%,
+    rgba(249, 251, 249, 0.88) 100%
+  );
+  backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D Decorative Ornaments for TTH Hero */
+.tth-hero::before, .tth-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.tth-hero::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #16a34a 0%, transparent 70%);
+  top: -100px;
+  right: -50px;
+}
+
+.tth-hero::after {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #dcfce7 0%, transparent 70%);
+  bottom: -50px;
+  left: -50px;
+=======
   /* Light glassy panel over the dynamic site background */
   background: rgba(249, 251, 249, 0.82);
   backdrop-filter: blur(14px);
+>>>>>>> origin/main
 }
 
 .tth-hero-content {
   flex: 1;
   max-width: 550px;
+<<<<<<< HEAD
+  position: relative;
+  z-index: 2;
+=======
+>>>>>>> origin/main
 }
 
 .tth-hero-content h1 {
   font-size: 48px;
   color: #0d3a25;
+<<<<<<< HEAD
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  /* Premium 3D text effect */
+  text-shadow: 
+    0 1px 0 #ffffff,
+    0 2px 0 rgba(11, 43, 32, 0.1),
+    0 4px 8px rgba(15, 106, 55, 0.15);
+  letter-spacing: -0.01em;
+=======
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 24px;
+>>>>>>> origin/main
 }
 
 .tth-hero-content p {
@@ -150,23 +212,63 @@
 }
 
 .btn-outline {
+<<<<<<< HEAD
+  border: 1px solid #0fb478;
+  color: #0d3a25;
+  background: rgba(255, 255, 255, 0.8);
+=======
   border: 1.5px solid #0fb478;
   color: #0fb478;
   background: transparent;
+>>>>>>> origin/main
   padding: 14px 28px;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
+<<<<<<< HEAD
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px rgba(15, 180, 120, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.btn-outline:hover {
+  background: #ffffff;
+  box-shadow: 
+    0 8px 20px rgba(15, 180, 120, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.btn-filled {
+  background: linear-gradient(135deg, #0fb478 0%, #0d9a68 100%);
+  color: white;
+  border: 1px solid rgba(15, 106, 55, 0.1);
+=======
 }
 
 .btn-filled {
   background: #0fb478;
   color: white;
   border: none;
+>>>>>>> origin/main
   padding: 14px 28px;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
+<<<<<<< HEAD
+  box-shadow: 
+    0 10px 24px rgba(15, 180, 120, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-filled:hover {
+  background: linear-gradient(135deg, #12c988 0%, #0fb478 100%);
+  box-shadow: 0 14px 32px rgba(15, 180, 120, 0.3);
+  transform: translateY(-2px);
+=======
+>>>>>>> origin/main
 }
 
 .tth-stats {
@@ -182,9 +284,25 @@
   border-radius: 26px;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
+  /* Enhanced 3D elevation for the video card */
+  background: #ffffff;
+  padding: 8px;
+  box-shadow:
+    0 25px 60px rgba(15, 118, 110, 0.22),
+    0 8px 20px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(148, 236, 196, 0.8);
+  transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+  transition: transform 0.5s ease;
+}
+
+.tth-hero-graphic:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+=======
   box-shadow:
     0 20px 50px rgba(15, 118, 110, 0.20),
     0 0 0 1px rgba(148, 236, 196, 0.6);
+>>>>>>> origin/main
 }
 
 .tth-hero-media {
@@ -231,8 +349,15 @@
 
 .tth-grid {
   display: grid;
+<<<<<<< HEAD
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+=======
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+>>>>>>> origin/main
 }
 
 .support-card {

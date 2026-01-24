@@ -99,6 +99,10 @@ export default function FindTherapistPage() {
 
   return (
     <div className="ft">
+<<<<<<< HEAD
+      <div className="ft-bg" />
+=======
+>>>>>>> origin/main
       <Navbar />
 
       <main className="ft-wrap">

@@ -7,6 +7,10 @@ import "./LandingPage.css";
 import Navbar from "../components/landing/Navbar";
 import Hero from "../components/landing/Hero";
 import Footer from "../components/landing/Footer";
+<<<<<<< HEAD
+import AnimatedBackground from "../components/AnimatedBackground";
+=======
+>>>>>>> origin/main
 
 import aiImg from "../assets/ai.jpg";
 import humanImg from "../assets/human.jpg";
@@ -15,6 +19,15 @@ import communityImg from "../assets/community.png";
 export default function LandingPage() {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
+  return (
+    <div className="lp">
+      <AnimatedBackground />
+=======
   /* ========= Optimized: Scroll + Mouse background motion (RAF + proper cleanup) ========= */
   useEffect(() => {
     const root = document.documentElement;
@@ -74,11 +87,14 @@ export default function LandingPage() {
     <div className="lp">
       <div className="lp-bg" />
 
+>>>>>>> origin/main
       <Navbar />
 
       <main className="lp-main">
         <Hero />
 
+<<<<<<< HEAD
+=======
         {/* Decorative mint shapes in background */}
         <div className="lp-ornaments" aria-hidden="true">
           {/* top-left cluster */}
@@ -122,6 +138,7 @@ export default function LandingPage() {
           </div>
         </div>
 
+>>>>>>> origin/main
         {/* SUPPORT SECTIONS */}
         <section className="lp-support" id="support">
           <div className="lp-container lp-support-grid">
@@ -155,7 +172,11 @@ export default function LandingPage() {
                 <div className="lp-row-cta">
                   <motion.button
                     className="lp-cta"
+<<<<<<< HEAD
+                    onClick={() => handleNavigate("/personal")}
+=======
                     onClick={() => navigate("/personal")}
+>>>>>>> origin/main
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -199,7 +220,11 @@ export default function LandingPage() {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
+<<<<<<< HEAD
+                    onClick={() => handleNavigate("/talk-to-human")}
+=======
                     onClick={() => navigate("/talk-to-human")}
+>>>>>>> origin/main
                   >
                     Talk to a Human →
                   </motion.button>
@@ -244,7 +269,11 @@ export default function LandingPage() {
                 <div className="lp-row-cta lp-row-cta--split">
                   <motion.button
                     className="lp-cta"
+<<<<<<< HEAD
+                    onClick={() => handleNavigate("/find-therapist")}
+=======
                     onClick={() => navigate("/find-therapist")}
+>>>>>>> origin/main
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -254,7 +283,11 @@ export default function LandingPage() {
 
                   <motion.button
                     className="lp-cta"
+<<<<<<< HEAD
+                    onClick={() => handleNavigate("/find-active-listener")}
+=======
                     onClick={() => navigate("/find-active-listener")}
+>>>>>>> origin/main
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}

@@ -1,0 +1,97 @@
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f6fbf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.splash-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.blob-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(6, 78, 59, 0.4) 0%, transparent 70%);
+  top: 5%;
+  left: 5%;
+}
+
+.blob-2 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(2, 44, 34, 0.35) 0%, transparent 70%);
+  bottom: 5%;
+  right: 5%;
+}
+
+.logo-animation {
+  position: relative;
+  z-index: 10;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(15, 106, 55, 0.25));
+}
+
+.splash-info {
+  text-align: center;
+}
+
+.splash-name {
+  font-size: 32px;
+  font-weight: 900;
+  color: #0b2b20;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.splash-name span {
+  color: #0fb478;
+}
+
+.splash-motto-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.splash-motto-wrap p {
+  font-size: 16px;
+  color: rgba(11, 43, 32, 0.7);
+  font-weight: 500;
+}
+
+.moto-label {
+  font-size: 14px !important;
+  color: #0fb478 !important;
+  font-weight: 700 !important;
+}

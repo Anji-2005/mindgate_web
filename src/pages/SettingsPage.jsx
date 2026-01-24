@@ -157,6 +157,11 @@ export default function SettingsPage() {
   // Modal description id
   const deleteDescId = useId();
 
+<<<<<<< HEAD
+  return (
+    <div className="sp">
+      <div className="lp-bg" />
+=======
   // Dynamic background — mouse + scroll updates CSS variables
   useEffect(() => {
     const root = document.documentElement;
@@ -194,6 +199,7 @@ export default function SettingsPage() {
       {/* Background layer */}
       <div className="sp-bg" aria-hidden="true" />
 
+>>>>>>> origin/main
       {/* Navbar */}
       <Navbar />
 
@@ -560,7 +566,11 @@ export default function SettingsPage() {
                         <span className="mini-desc">Email us and we’ll respond soon.</span>
                       </a>
 
+<<<<<<< HEAD
+                      <Link to="/talk-to-human" className="mini-card is-primary">
+=======
                       <Link to="/talktohuman" className="mini-card is-primary">
+>>>>>>> origin/main
                         <span className="mini-top">
                           <Shield size={18} />
                           <span className="mini-title">Talk to a human</span>
