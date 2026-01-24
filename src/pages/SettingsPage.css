@@ -1,45 +1,18 @@
 /* ==========
    Palette + base
    ========== */
-<<<<<<< HEAD
+
 .sp {
   position: relative;
   min-height: 100vh;
   background: #eef7f3;
   color: #0b2b20;
-=======
-:root{
-  --bg: #eef7f3;
-  --surface: rgba(255,255,255,0.78);
-  --surface-2: rgba(255,255,255,0.60);
-  --primary: #0b2b20;
-  --primary-2: #0f3d2e;
-  --muted: rgba(11,43,32,0.70);
-  --muted-2: rgba(11,43,32,0.55);
-  --accent: #d8f3ea;
-  --accent-2: #cfeee1;
-  --border: rgba(11,43,32,0.14);
-  --border-2: rgba(11,43,32,0.10);
-  --shadow: 0 16px 40px rgba(10, 35, 26, 0.12);
-  --shadow-soft: 0 10px 24px rgba(10, 35, 26, 0.10);
 
-  /* Dynamic background variables */
-  --mx: 50%;
-  --my: 35%;
-  --sx: 0;
-}
-
-.sp {
-  position: relative;
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--primary);
->>>>>>> origin/main
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
+
 .lp-bg {
   position: fixed;
   inset: 0;
@@ -53,62 +26,7 @@
 }
 
 .sp * { box-sizing: border-box; }
-=======
-.sp * { box-sizing: border-box; }
 
-/* ==========
-   Dynamic background layer (blob gradients)
-   ========== */
-.sp-bg {
-  position: fixed;
-  inset: -50px;
-  z-index: -10;
-  pointer-events: none;
-  filter: blur(18px);
-  opacity: 0.95;
-  transform: translate3d(0,0,0);
-}
-
-/* Blobs */
-.sp-bg::before,
-.sp-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.sp-bg::before{
-  background:
-    radial-gradient(circle at calc(var(--mx) + (var(--sx) * 12%)) calc(var(--my) - (var(--sx) * 10%)),
-      rgba(15, 61, 46, 0.18) 0%,
-      rgba(15, 61, 46, 0.10) 30%,
-      rgba(15, 61, 46, 0.00) 62%),
-    radial-gradient(circle at calc(80% - (var(--sx) * 18%)) calc(30% + (var(--sx) * 12%)),
-      rgba(207, 238, 225, 0.85) 0%,
-      rgba(207, 238, 225, 0.35) 38%,
-      rgba(207, 238, 225, 0.00) 68%),
-    radial-gradient(circle at calc(22% + (var(--sx) * 14%)) calc(82% - (var(--sx) * 10%)),
-      rgba(216, 243, 234, 0.95) 0%,
-      rgba(216, 243, 234, 0.40) 40%,
-      rgba(216, 243, 234, 0.00) 70%);
-  transition: background-position 220ms ease;
-}
-
-/* Subtle grain */
-.sp-bg::after{
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.30), rgba(255,255,255,0.00) 60%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(11,43,32,0.03) 0px,
-      rgba(11,43,32,0.03) 1px,
-      rgba(255,255,255,0.00) 2px,
-      rgba(255,255,255,0.00) 6px
-    );
-  mix-blend-mode: soft-light;
-  opacity: 0.25;
-}
->>>>>>> origin/main
 
 /* ==========
    Navbar
@@ -119,36 +37,28 @@
   z-index: 20;
   background: rgba(238,247,243,0.55);
   backdrop-filter: blur(10px);
-<<<<<<< HEAD
+
   border-bottom: 1px solid rgba(11,43,32,0.10);
-=======
-  border-bottom: 1px solid var(--border-2);
->>>>>>> origin/main
+
 }
 
 .sp-nav-inner{
   max-width: 1200px;
   margin: 0 auto;
-<<<<<<< HEAD
+
   padding: 14px 22px;
   display: flex;
   justify-content: space-between;
-=======
-  padding: 18px 22px;
-  display: grid;
-  grid-template-columns: 220px 1fr 220px;
->>>>>>> origin/main
+
   align-items: center;
   gap: 14px;
 }
 
 .sp-brand{
   text-decoration: none;
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 900;
   letter-spacing: 0.12em;
 }
@@ -166,11 +76,9 @@
 
 .sp-links a{
   text-decoration: none;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-weight: 600;
   font-size: 15px;
   padding: 8px 6px;
@@ -180,11 +88,9 @@
 
 .sp-links a:hover{
   background: rgba(207,238,225,0.40);
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
 }
 
 .sp-actions{
@@ -196,11 +102,9 @@
 
 .sp-openchat{
   text-decoration: none;
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 800;
   padding: 10px 10px;
   border-radius: 12px;
@@ -212,11 +116,9 @@
 
 .sp-pill{
   text-decoration: none;
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 800;
   background: rgba(207,238,225,0.75);
   border: 1px solid rgba(11,43,32,0.10);
@@ -249,11 +151,9 @@
 }
 
 .sp-kicker{
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.55);
-=======
-  color: var(--muted-2);
->>>>>>> origin/main
+
   font-weight: 700;
   letter-spacing: 0.02em;
   font-size: 13px;
@@ -269,11 +169,9 @@
 
 .sp-subtitle{
   margin: 10px 0 0;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   max-width: 620px;
 }
 
@@ -281,29 +179,21 @@
   display: flex;
   align-items: center;
   gap: 8px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.55);
   font-weight: 700;
   font-size: 13px;
   background: rgba(255,255,255,0.55);
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  color: var(--muted-2);
-  font-weight: 700;
-  font-size: 13px;
-  background: rgba(255,255,255,0.55);
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
   padding: 10px 12px;
   border-radius: 999px;
 }
 
 .sp-bc-strong{
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
 }
 
 /* ==========
@@ -317,17 +207,12 @@
 }
 
 .sp-side-card{
-<<<<<<< HEAD
+
   background: rgba(255,255,255,0.78);
   border: 1px solid rgba(11,43,32,0.14);
   border-radius: 22px;
   box-shadow: 0 10px 24px rgba(10, 35, 26, 0.10);
-=======
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow-soft);
->>>>>>> origin/main
+
   padding: 10px;
 }
 
@@ -341,11 +226,9 @@
   border-radius: 16px;
   border: 1px solid transparent;
   background: transparent;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   cursor: pointer;
   transition: background 160ms ease, transform 160ms ease, border-color 160ms ease, color 160ms ease;
 }
@@ -353,21 +236,17 @@
 .sp-tab:hover{
   background: rgba(207,238,225,0.40);
   transform: translateY(-1px);
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
 }
 
 .sp-tab.is-active{
   background: rgba(11,43,32,0.10);
   border-color: rgba(11,43,32,0.14);
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
 }
 
 .sp-tab-icn{
@@ -377,11 +256,9 @@
   display: grid;
   place-items: center;
   background: rgba(255,255,255,0.55);
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
 }
 
 .sp-tab-dot{
@@ -406,11 +283,9 @@
 .sp-side-note{
   margin-top: 12px;
   background: rgba(255,255,255,0.55);
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
   border-radius: 20px;
   padding: 14px 14px;
 }
@@ -421,27 +296,20 @@
 }
 
 .sp-note-text{
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   line-height: 1.5;
 }
 
 .sp-panel{
-<<<<<<< HEAD
+
   background: rgba(255,255,255,0.78);
   border: 1px solid rgba(11,43,32,0.14);
   border-radius: 22px;
   box-shadow: 0 16px 40px rgba(10, 35, 26, 0.12);
-=======
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
->>>>>>> origin/main
+
   overflow: hidden;
 }
 
@@ -460,11 +328,9 @@
    ========== */
 .card{
   background: rgba(255,255,255,0.72);
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
   border-radius: 18px;
   padding: 14px;
   margin-bottom: 14px;
@@ -491,22 +357,18 @@
 }
 
 .card-desc{
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   margin-top: 4px;
   max-width: 560px;
 }
 
 .card-body{
-<<<<<<< HEAD
+
   border-top: 1px solid rgba(11,43,32,0.10);
-=======
-  border-top: 1px solid var(--border-2);
->>>>>>> origin/main
+
   padding-top: 12px;
 }
 
@@ -527,11 +389,9 @@
   height: 44px;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, rgba(207,238,225,0.85), rgba(11,43,32,0.12));
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
 }
 
 .profile-name{
@@ -539,11 +399,9 @@
 }
 
 .profile-email{
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   margin-top: 2px;
 }
@@ -565,11 +423,9 @@
   display: block;
   font-weight: 800;
   font-size: 12px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.55);
-=======
-  color: var(--muted-2);
->>>>>>> origin/main
+
   margin-bottom: 6px;
 }
 
@@ -577,17 +433,12 @@
   width: 100%;
   padding: 12px 12px;
   border-radius: 14px;
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.14);
   background: rgba(255,255,255,0.85);
   outline: none;
   color: #0b2b20;
-=======
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.85);
-  outline: none;
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 700;
 }
 
@@ -598,26 +449,20 @@
 
 .hint{
   margin-top: 10px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   line-height: 1.5;
 }
 
 /* Buttons */
 .btn{
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.14);
   background: rgba(255,255,255,0.75);
   color: #0b2b20;
-=======
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.75);
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 900;
   padding: 10px 12px;
   border-radius: 14px;
@@ -668,11 +513,9 @@
   justify-content: space-between;
   gap: 14px;
   padding: 10px 0;
-<<<<<<< HEAD
+
   border-bottom: 1px solid rgba(11,43,32,0.10);
-=======
-  border-bottom: 1px solid var(--border-2);
->>>>>>> origin/main
+
 }
 
 .set-row:last-child{
@@ -684,11 +527,9 @@
 }
 
 .set-row-helper{
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   margin-top: 3px;
   line-height: 1.45;
@@ -703,11 +544,9 @@
   width: 52px;
   height: 30px;
   border-radius: 999px;
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.14);
-=======
-  border: 1px solid var(--border);
->>>>>>> origin/main
+
   background: rgba(255,255,255,0.75);
   display: inline-flex;
   align-items: center;
@@ -754,11 +593,9 @@
   border-radius: 999px;
   border: 1px solid transparent;
   background: transparent;
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 950;
   cursor: pointer;
   transition: background 160ms ease, transform 160ms ease;
@@ -786,11 +623,9 @@
   align-items: start;
   padding: 12px;
   border-radius: 16px;
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
   background: rgba(255,255,255,0.75);
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
@@ -829,11 +664,9 @@
 .radio-desc{
   display: block;
   margin-top: 3px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   line-height: 1.45;
 }
@@ -842,31 +675,22 @@
 .time{
   padding: 10px 12px;
   border-radius: 14px;
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.14);
   background: rgba(255,255,255,0.85);
   font-weight: 900;
   color: #0b2b20;
-=======
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.85);
-  font-weight: 900;
-  color: var(--primary);
->>>>>>> origin/main
+
 }
 
 /* Mini cards */
 .mini-card{
   text-decoration: none;
-<<<<<<< HEAD
+
   color: #0b2b20;
   background: rgba(255,255,255,0.75);
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  color: var(--primary);
-  background: rgba(255,255,255,0.75);
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
   border-radius: 18px;
   padding: 14px;
   box-shadow: 0 10px 20px rgba(10,35,26,0.08);
@@ -896,11 +720,9 @@
 }
 
 .mini-desc{
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   line-height: 1.45;
 }
@@ -925,11 +747,9 @@
 
 .banner-text{
   margin-top: 4px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   font-size: 13px;
   line-height: 1.5;
 }
@@ -945,33 +765,27 @@
   grid-template-columns: 140px 1fr;
   gap: 12px;
   padding: 10px 0;
-<<<<<<< HEAD
+
   border-bottom: 1px solid rgba(11,43,32,0.10);
-=======
-  border-bottom: 1px solid var(--border-2);
->>>>>>> origin/main
+
 }
 
 .about-row:last-child{ border-bottom: none; }
 
 .about-label{
   font-weight: 950;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.55);
-=======
-  color: var(--muted-2);
->>>>>>> origin/main
+
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .about-value{
-<<<<<<< HEAD
+
   color: #0b2b20;
-=======
-  color: var(--primary);
->>>>>>> origin/main
+
   font-weight: 700;
   line-height: 1.5;
 }
@@ -992,11 +806,9 @@
   background: rgba(255,255,255,0.92);
   border: 1px solid rgba(11,43,32,0.18);
   border-radius: 18px;
-<<<<<<< HEAD
+
   box-shadow: 0 16px 40px rgba(10, 35, 26, 0.12);
-=======
-  box-shadow: var(--shadow);
->>>>>>> origin/main
+
   overflow: hidden;
 }
 
@@ -1005,11 +817,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 14px;
-<<<<<<< HEAD
+
   border-bottom: 1px solid rgba(11,43,32,0.10);
-=======
-  border-bottom: 1px solid var(--border-2);
->>>>>>> origin/main
+
 }
 
 .modal-title{
@@ -1020,11 +830,9 @@
   width: 34px;
   height: 34px;
   border-radius: 12px;
-<<<<<<< HEAD
+
   border: 1px solid rgba(11,43,32,0.10);
-=======
-  border: 1px solid var(--border-2);
->>>>>>> origin/main
+
   background: rgba(207,238,225,0.45);
   cursor: pointer;
   font-weight: 900;
@@ -1038,11 +846,9 @@
 
 .modal-p{
   margin: 0 0 12px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.70);
-=======
-  color: var(--muted);
->>>>>>> origin/main
+
   line-height: 1.55;
 }
 
@@ -1056,11 +862,9 @@
 /* Footer */
 .sp-footer{
   padding: 22px 22px 28px;
-<<<<<<< HEAD
+
   color: rgba(11,43,32,0.55);
-=======
-  color: var(--muted-2);
->>>>>>> origin/main
+
 }
 
 .sp-footer-inner{
@@ -1083,7 +887,7 @@
    ========== */
 @media (max-width: 980px){
   .sp-nav-inner{
-<<<<<<< HEAD
+
     flex-direction: column;
     padding: 12px;
     gap: 12px;
@@ -1103,24 +907,12 @@
     width: 100%;
     justify-content: center;
     gap: 8px;
-=======
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .sp-links{
-    justify-content: flex-start;
-    overflow-x: auto;
-    gap: 18px;
-    padding-bottom: 4px;
-  }
-  .sp-actions{
-    justify-content: flex-start;
->>>>>>> origin/main
+
   }
 
   .sp-shell{
     grid-template-columns: 1fr;
-<<<<<<< HEAD
+
     gap: 12px;
   }
   .sp-side-card{
@@ -1137,17 +929,7 @@
     min-width: 160px;
     padding: 10px;
     flex-shrink: 0;
-=======
-  }
-  .sp-side-card{
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 10px;
-  }
-  .sp-tab{
-    min-width: 190px;
->>>>>>> origin/main
+
   }
   .sp-side-note{
     display: none;
@@ -1155,7 +937,7 @@
 }
 
 @media (max-width: 680px){
-<<<<<<< HEAD
+
   .sp-nav-inner {
     padding: 10px;
   }
@@ -1169,12 +951,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-=======
-  .sp-title{ font-size: 34px; }
-  .sp-head{
-    flex-direction: column;
-    align-items: flex-start;
->>>>>>> origin/main
+
   }
   .grid-2{ grid-template-columns: 1fr; }
   .grid-3{ grid-template-columns: 1fr; }

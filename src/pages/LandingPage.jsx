@@ -7,10 +7,9 @@ import "./LandingPage.css";
 import Navbar from "../components/landing/Navbar";
 import Hero from "../components/landing/Hero";
 import Footer from "../components/landing/Footer";
-<<<<<<< HEAD
+
 import AnimatedBackground from "../components/AnimatedBackground";
-=======
->>>>>>> origin/main
+
 
 import aiImg from "../assets/ai.jpg";
 import humanImg from "../assets/human.jpg";
@@ -19,7 +18,7 @@ import communityImg from "../assets/community.png";
 export default function LandingPage() {
   const navigate = useNavigate();
 
-<<<<<<< HEAD
+
   const handleNavigate = (path) => {
     navigate(path);
   };
@@ -27,118 +26,14 @@ export default function LandingPage() {
   return (
     <div className="lp">
       <AnimatedBackground />
-=======
-  /* ========= Optimized: Scroll + Mouse background motion (RAF + proper cleanup) ========= */
-  useEffect(() => {
-    const root = document.documentElement;
 
-    let latestEvent = null;
-    let rafId = null;
-
-    const update = () => {
-      rafId = null;
-
-      const y = window.scrollY || 0;
-
-      const mouseX = latestEvent
-        ? (latestEvent.clientX / window.innerWidth - 0.5) * 40
-        : 0;
-
-      const mouseY = latestEvent
-        ? (latestEvent.clientY / window.innerHeight - 0.5) * 40
-        : 0;
-
-      const bgx = Math.sin(y * 0.002) * 30 + mouseX;
-      const bgy = Math.cos(y * 0.002) * 20 + mouseY;
-      const rot = (y * 0.04) % 360;
-
-      root.style.setProperty("--bgx", `${bgx.toFixed(2)}px`);
-      root.style.setProperty("--bgy", `${bgy.toFixed(2)}px`);
-      root.style.setProperty("--bgrot", `${rot.toFixed(2)}deg`);
-    };
-
-    const requestUpdate = () => {
-      if (rafId) return;
-      rafId = requestAnimationFrame(update);
-    };
-
-    const onMouseMove = (e) => {
-      latestEvent = e;
-      requestUpdate();
-    };
-
-    const onScroll = () => {
-      requestUpdate();
-    };
-
-    requestUpdate();
-
-    window.addEventListener("mousemove", onMouseMove, { passive: true });
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("scroll", onScroll);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
-  return (
-    <div className="lp">
-      <div className="lp-bg" />
-
->>>>>>> origin/main
       <Navbar />
 
       <main className="lp-main">
         <Hero />
 
-<<<<<<< HEAD
-=======
-        {/* Decorative mint shapes in background */}
-        <div className="lp-ornaments" aria-hidden="true">
-          {/* top-left cluster */}
-          <div className="lp-ornament lp-ornament--tl">
-            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="10" width="30" height="30" rx="8" fill="#dcfce7" />
-              <path d="M70 2 L76 20 L94 20 L80 30 L86 48 L70 38 L54 48 L60 30 L46 20 L64 20 Z" fill="#dcfce7" />
-              <path d="M18 64 A18 18 0 0 1 54 64" stroke="#dcfce7" strokeWidth="8" fill="none" />
-            </svg>
-          </div>
 
-          {/* right side mid cluster */}
-          <div className="lp-ornament lp-ornament--rm">
-            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="70,14 92,26 96,50 80,66 56,60 48,38" fill="#dcfce7" />
-              <rect x="8" y="26" width="28" height="28" rx="12" fill="#dcfce7" />
-            </svg>
-          </div>
 
-          {/* bottom-left cluster */}
-          <div className="lp-ornament lp-ornament--bl">
-            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-              <rect x="14" y="18" width="34" height="34" rx="10" fill="#dcfce7" />
-              <path d="M76 12 L82 28 L100 28 L86 38 L92 56 L76 46 L60 56 L66 38 L52 28 L70 28 Z" fill="#dcfce7" />
-            </svg>
-          </div>
-
-          {/* extra scattered shapes to enrich the background */}
-          <div className="lp-ornament lp-ornament--tr">
-            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="30" cy="26" r="14" fill="#dcfce7" />
-              <polygon points="74,18 94,26 98,46 82,60 62,54 56,36" fill="#dcfce7" />
-            </svg>
-          </div>
-
-          <div className="lp-ornament lp-ornament--bm">
-            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="30" width="26" height="26" rx="12" fill="#dcfce7" />
-              <circle cx="86" cy="40" r="12" fill="#dcfce7" />
-            </svg>
-          </div>
-        </div>
-
->>>>>>> origin/main
         {/* SUPPORT SECTIONS */}
         <section className="lp-support" id="support">
           <div className="lp-container lp-support-grid">
@@ -172,11 +67,9 @@ export default function LandingPage() {
                 <div className="lp-row-cta">
                   <motion.button
                     className="lp-cta"
-<<<<<<< HEAD
+
                     onClick={() => handleNavigate("/personal")}
-=======
-                    onClick={() => navigate("/personal")}
->>>>>>> origin/main
+
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -220,11 +113,9 @@ export default function LandingPage() {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
-<<<<<<< HEAD
+
                     onClick={() => handleNavigate("/talk-to-human")}
-=======
-                    onClick={() => navigate("/talk-to-human")}
->>>>>>> origin/main
+
                   >
                     Talk to a Human →
                   </motion.button>
@@ -269,11 +160,9 @@ export default function LandingPage() {
                 <div className="lp-row-cta lp-row-cta--split">
                   <motion.button
                     className="lp-cta"
-<<<<<<< HEAD
+
                     onClick={() => handleNavigate("/find-therapist")}
-=======
-                    onClick={() => navigate("/find-therapist")}
->>>>>>> origin/main
+
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -283,11 +172,9 @@ export default function LandingPage() {
 
                   <motion.button
                     className="lp-cta"
-<<<<<<< HEAD
+
                     onClick={() => handleNavigate("/find-active-listener")}
-=======
-                    onClick={() => navigate("/find-active-listener")}
->>>>>>> origin/main
+
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 320, damping: 18 }}

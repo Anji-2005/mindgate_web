@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: #eef7f3;
   color: #0b2b20;
-<<<<<<< HEAD
+
   position: relative;
 }
 
@@ -21,11 +21,7 @@
 .fa-wrap {
   position: relative;
   z-index: 1;
-=======
-}
 
-.fa-wrap {
->>>>>>> origin/main
   max-width: 1180px;
   margin: 0 auto;
   padding: 18px 18px 34px;
@@ -385,7 +381,7 @@
     align-items: flex-start;
     gap: 10px;
   }
-<<<<<<< HEAD
+
 
   .fa-btn {
     width: 100%;
@@ -396,6 +392,5 @@
     flex-direction: column;
     width: 100%;
   }
-=======
->>>>>>> origin/main
+
 }

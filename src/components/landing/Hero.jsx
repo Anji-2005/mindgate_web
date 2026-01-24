@@ -7,13 +7,12 @@ export default function Hero() {
   const navigate = useNavigate();
   const [supportOpen, setSupportOpen] = useState(false);
 
-<<<<<<< HEAD
+
   const handleNavigate = (path) => {
     navigate(path);
   };
 
-=======
->>>>>>> origin/main
+
   return (
     <section className="lp-hero">
       <div className="lp-container">
@@ -33,15 +32,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.65, ease: "easeOut", delay: 0.08 }}
             >
-<<<<<<< HEAD
+
               Minds connected, hearts protected. 
               <br />
               Our moto.
-=======
-              Designed to guide you
-              <br />
-              toward the support you deserve.
->>>>>>> origin/main
+
             </motion.div>
 
             <div className="lp-h1-wrap">
@@ -57,17 +52,12 @@ export default function Hero() {
             <p className="lp-sub">Coming soon: A calm companion for your mind.</p>
 
             {/* OPTIONAL HERO CTA (extra dynamic feeling) */}
-<<<<<<< HEAD
+
             <div className="lp-hero-btns">
               <motion.button
                 className="lp-cta"
                 onClick={() => handleNavigate("/personal")}
-=======
-            <div style={{ marginTop: 18, display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <motion.button
-                className="lp-cta"
-                onClick={() => navigate("/personal")}
->>>>>>> origin/main
+
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -77,11 +67,9 @@ export default function Hero() {
 
               <motion.button
                 className="lp-pillbtn"
-<<<<<<< HEAD
+
                 onClick={() => handleNavigate("/talk-to-human")}
-=======
-                onClick={() => navigate("/talk-to-human")}
->>>>>>> origin/main
+
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 320, damping: 18 }}
@@ -161,11 +149,9 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 380, damping: 18 }}
               aria-label="Settings"
-<<<<<<< HEAD
+
               onClick={() => handleNavigate("/settings")}
-=======
-              onClick={() => navigate("/settings")}
->>>>>>> origin/main
+
             >
               ☼
             </motion.button>
@@ -176,11 +162,9 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 380, damping: 18 }}
               aria-label="Start chat"
-<<<<<<< HEAD
+
               onClick={() => handleNavigate("/personal")}
-=======
-              onClick={() => navigate("/personal")}
->>>>>>> origin/main
+
             >
               <span className="lp-owl-eye" />
               <span className="lp-owl-eye" />

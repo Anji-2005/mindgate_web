@@ -1,7 +1,7 @@
 /* Universal Font */
 * { font-family: 'Poppins', sans-serif !important; box-sizing: border-box; }
 
-<<<<<<< HEAD
+
 .pg { display: flex; height: 100vh; width: 100vw; background-color: transparent; overflow: hidden; position: relative; }
 
 /* Sidebar */
@@ -82,72 +82,29 @@
   border-radius: 20px; 
   font-weight: 700; 
   color: #0b2b20; 
-=======
-.pg { display: flex; height: 100vh; width: 100vw; background-color: #f1faf5; overflow: hidden; }
 
-/* Sidebar */
-.side { width: 280px; background: #e6f6ee; border-right: 1px solid rgba(13, 58, 37, 0.05); display: flex; flex-direction: column; padding: 24px; z-index: 20; }
-.back-btn { background: transparent; border: none; color: #0d3a25; font-size: 14px; margin-bottom: 20px; cursor: pointer; opacity: 0.6; text-align: left; }
-.logo { font-weight: 800; font-size: 28px; color: #0d3a25; letter-spacing: -0.04em; margin-bottom: 10px; }
-.divider { height: 1px; border-bottom: 1px dashed rgba(13, 58, 37, 0.15); margin: 20px 0; }
-.nav-group { flex: 1; }
-.sideBtn { width: 100%; text-align: left; padding: 14px 16px; margin: 6px 0; border: none; background: transparent; border-radius: 12px; font-weight: 600; color: #0d3a25; cursor: pointer; }
-.sideBtn.active { background: #c3e9d5; }
-.sideBottom { margin-top: auto; padding-bottom: 10px; }
-.settings-btn { font-size: 15px; font-weight: 500; color: #0d3a25; opacity: 0.7; cursor: pointer; display: flex; align-items: center; gap: 8px; }
-
-/* Main Content & Robot */
-.main { flex: 1; display: flex; flex-direction: column; position: relative; }
-.robot-background-layer { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; z-index: 1; pointer-events: none; }
-.robot-svg-wrapper { opacity: 0.45; transform: translateY(-5%); }
-
-/* Restoring the original Aesthetic Buttons */
-.chat-container { flex: 1; display: flex; flex-direction: column; width: 100%; max-width: 900px; margin: 0 auto; z-index: 10; justify-content: center; align-items: center; }
-.topRow { position: absolute; top: 30px; right: 40px; z-index: 30; }
-.newChat { background: #0d3a25; color: white; border: none; padding: 12px 24px; border-radius: 99px; cursor: pointer; font-weight: 700; }
-
-.center-content { text-align: center; width: 100%; }
-.title { font-size: 72px; font-weight: 800; color: #0d3a25; margin-bottom: 10px; letter-spacing: -0.05em; }
-.subtitle { color: #0d3a25; font-size: 20px; opacity: 0.7; margin-bottom: 50px; }
-
-/* Fixed Quick Buttons */
-.quickRow { display: flex; justify-content: center; gap: 20px; width: 100%; padding: 0 20px; }
-.quick { 
-  background: rgba(255, 255, 255, 0.8); 
-  border: 2px solid #0d3a25; 
-  padding: 20px 30px; 
-  border-radius: 20px; 
-  font-weight: 700; 
-  color: #0d3a25; 
->>>>>>> origin/main
   cursor: pointer; 
   flex: 1; 
   font-size: 16px;
   transition: 0.2s;
-<<<<<<< HEAD
+
   box-shadow: 0 4px 12px rgba(15, 106, 55, 0.1);
 }
 .quick:hover { background: #f6fbf7; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15, 106, 55, 0.1); }
-=======
-}
-.quick:hover { background: white; transform: translateY(-3px); }
->>>>>>> origin/main
+
 
 /* Fixed Input Bar */
 .composer-wrapper { width: 100%; max-width: 850px; margin-top: 40px; }
 .composer { 
-<<<<<<< HEAD
+
   background: #ffffff; 
   border: 2.5px solid #0f6a37; 
-=======
-  background: white; 
-  border: 2.5px solid #0d3a25; 
->>>>>>> origin/main
+
   border-radius: 40px; 
   display: flex; 
   align-items: center; 
   padding: 8px 10px 8px 24px; 
-<<<<<<< HEAD
+
   box-shadow: 0 10px 30px rgba(15, 106, 55, 0.1);
 }
 .input { flex: 1; border: none; outline: none; font-size: 18px; padding: 10px 0; background: transparent; color: #0b2b20; }
@@ -187,10 +144,4 @@
   .input { font-size: 16px; }
   .plus, .send { width: 38px; height: 38px; }
 }
-=======
-}
-.input { flex: 1; border: none; outline: none; font-size: 18px; padding: 10px 0; }
-.plus, .send { background: #e6f6ee; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
-.send { background: #0d3a25; color: white; margin-left: 10px; font-size: 20px; }
-.tip { text-align: center; font-size: 13px; margin-top: 15px; color: #0d3a25; opacity: 0.5; }
->>>>>>> origin/main
+

@@ -157,49 +157,11 @@ export default function SettingsPage() {
   // Modal description id
   const deleteDescId = useId();
 
-<<<<<<< HEAD
+
   return (
     <div className="sp">
       <div className="lp-bg" />
-=======
-  // Dynamic background — mouse + scroll updates CSS variables
-  useEffect(() => {
-    const root = document.documentElement;
 
-    const onMove = (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      root.style.setProperty("--mx", `${x.toFixed(2)}%`);
-      root.style.setProperty("--my", `${y.toFixed(2)}%`);
-    };
-
-    const onScroll = () => {
-      const max = Math.max(1, document.body.scrollHeight - window.innerHeight);
-      const s = window.scrollY / max;
-      root.style.setProperty("--sx", `${s.toFixed(4)}`);
-    };
-
-    // init
-    root.style.setProperty("--mx", "50%");
-    root.style.setProperty("--my", "35%");
-    onScroll();
-
-    // Use globalThis to avoid "window is not defined" warnings in some linters
-    globalThis.addEventListener("mousemove", onMove, { passive: true });
-    globalThis.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      globalThis.removeEventListener("mousemove", onMove);
-      globalThis.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
-  return (
-    <div className="sp">
-      {/* Background layer */}
-      <div className="sp-bg" aria-hidden="true" />
-
->>>>>>> origin/main
       {/* Navbar */}
       <Navbar />
 
@@ -566,11 +528,9 @@ export default function SettingsPage() {
                         <span className="mini-desc">Email us and we’ll respond soon.</span>
                       </a>
 
-<<<<<<< HEAD
+
                       <Link to="/talk-to-human" className="mini-card is-primary">
-=======
-                      <Link to="/talktohuman" className="mini-card is-primary">
->>>>>>> origin/main
+
                         <span className="mini-top">
                           <Shield size={18} />
                           <span className="mini-title">Talk to a human</span>

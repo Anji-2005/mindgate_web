@@ -9,17 +9,16 @@
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-<<<<<<< HEAD
+
   background: #f6fbf7;
-=======
->>>>>>> origin/main
+
 
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
     "Noto Sans", "Helvetica Neue", sans-serif;
   color: #0b2b20;
 }
 
-<<<<<<< HEAD
+
 .about-bg {
   position: fixed;
   inset: 0;
@@ -32,8 +31,7 @@
   filter: blur(40px);
 }
 
-=======
->>>>>>> origin/main
+
 /* subtle floating + background accents (kept) */
 .about-float {
   position: fixed;
@@ -599,14 +597,13 @@
   .about-stat-divider {
     display: none;
   }
-<<<<<<< HEAD
+
 
   .about-cta-btn {
     width: 100%;
     justify-content: center;
   }
-=======
->>>>>>> origin/main
+
 }
 
 @media (max-width: 720px) {

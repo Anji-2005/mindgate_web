@@ -3,93 +3,30 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/landing/Navbar";
 import Footer from "../components/landing/Footer";
-<<<<<<< HEAD
+
 import AnimatedBackground from "../components/AnimatedBackground";
-=======
->>>>>>> origin/main
+
 import "./TalktoHumanPage.css";
 
 export default function TalkToHuman() {
   const navigate = useNavigate();
 
-<<<<<<< HEAD
-=======
-  /* ========= Background motion: reuse LandingPage scroll + mouse parallax ========= */
-  useEffect(() => {
-    const root = document.documentElement;
 
-    let latestEvent = null;
-    let rafId = null;
 
-    const update = () => {
-      rafId = null;
-
-      const y = window.scrollY || 0;
-
-      const mouseX = latestEvent
-        ? (latestEvent.clientX / window.innerWidth - 0.5) * 40
-        : 0;
-
-      const mouseY = latestEvent
-        ? (latestEvent.clientY / window.innerHeight - 0.5) * 40
-        : 0;
-
-      const bgx = Math.sin(y * 0.002) * 30 + mouseX;
-      const bgy = Math.cos(y * 0.002) * 20 + mouseY;
-
-      root.style.setProperty("--bgx", `${bgx.toFixed(2)}px`);
-      root.style.setProperty("--bgy", `${bgy.toFixed(2)}px`);
-      // Optional fade variable if you want to dim background further down the page
-      root.style.setProperty("--bgfade", "1");
-    };
-
-    const requestUpdate = () => {
-      if (rafId) return;
-      rafId = requestAnimationFrame(update);
-    };
-
-    const onMouseMove = (e) => {
-      latestEvent = e;
-      requestUpdate();
-    };
-
-    const onScroll = () => {
-      requestUpdate();
-    };
-
-    requestUpdate();
-
-    window.addEventListener("mousemove", onMouseMove, { passive: true });
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("scroll", onScroll);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
->>>>>>> origin/main
   const supportTypes = [
     {
       title: "Active Listening Support",
       description: "Talk with trained listeners anytime.",
       icon: "👤",
-<<<<<<< HEAD
+
       path: "/find-active-listener",
-=======
-    },
-    {
-      title: "Empathetic Listener",
-      description: "Guided support from psychology interns.",
-      icon: "👤",
->>>>>>> origin/main
+
     },
     {
       title: "Professional Psychologist (Licensed)",
       description: "One-on-one sessions with certified experts.",
       icon: "💼",
-<<<<<<< HEAD
+
       path: "/find-therapist",
     },
   ];
@@ -101,16 +38,7 @@ export default function TalkToHuman() {
   return (
     <div className="tth-wrapper">
       <AnimatedBackground />
-=======
-    },
-  ];
 
-  return (
-    <div className="tth-wrapper">
-      {/* Dynamic Background Layer */}
-      <div className="tth-bg" />
-      
->>>>>>> origin/main
       <Navbar />
       
       <main className="tth-main">
@@ -131,13 +59,10 @@ export default function TalkToHuman() {
                 </p>
               </div>
               <div className="tth-hero-btns">
-<<<<<<< HEAD
+
                 <button className="btn-outline" onClick={scrollToSupport}>Explore Support Options</button>
                 <button className="btn-filled" onClick={scrollToSupport}>Begin Your Journey</button>
-=======
-                <button className="btn-outline">Explore Support Options</button>
-                <button className="btn-filled">Begin Your Journey</button>
->>>>>>> origin/main
+
               </div>
               <div className="tth-stats">
                 <span><strong>2.5k+</strong> Join thousands seeking support</span>
@@ -167,11 +92,9 @@ export default function TalkToHuman() {
         {/* Lower area: support grid + footer share same green background */}
         <div className="tth-lower-bg">
           {/* Support Selection Grid with staggered reveal */}
-<<<<<<< HEAD
+
           <section className="tth-support-selection" id="support-selection">
-=======
-          <section className="tth-support-selection">
->>>>>>> origin/main
+
             <div className="tth-container-grid">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -191,11 +114,10 @@ export default function TalkToHuman() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ y: -10, transition: { duration: 0.2 } }}
-<<<<<<< HEAD
+
                     onClick={() => navigate(type.path)}
                     style={{ cursor: "pointer" }}
-=======
->>>>>>> origin/main
+
                   >
                     <div className="card-icon">{type.icon}</div>
                     <h3>{type.title}</h3>

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -8,13 +8,7 @@ import "./Navbar.css";
 export default function Navbar() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-=======
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
-  const navigate = useNavigate();
->>>>>>> origin/main
 
   const hoverLink = {
     rest: { y: 0, opacity: 0.88 },
@@ -22,7 +16,7 @@ export default function Navbar() {
   };
 
   const goToAI = (e) => {
-<<<<<<< HEAD
+
     if (e) e.preventDefault();
     setIsOpen(false);
     navigate("/personal");
@@ -41,27 +35,7 @@ export default function Navbar() {
     { label: "About", onClick: () => navigate("/about") },
   ];
 
-=======
-    e.preventDefault();
-    const el = document.getElementById("support");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/personal");
-    }
-  };
 
-  const goToHuman = (e) => {
-    e.preventDefault();
-    const el = document.getElementById("support");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/talk-to-human");
-    }
-  };
-
->>>>>>> origin/main
   return (
     <header className="lp-nav">
       <div className="lp-nav-inner">
@@ -70,21 +44,18 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-<<<<<<< HEAD
+
           style={{ cursor: "pointer", whiteSpace: "nowrap" }}
           onClick={() => {
             navigate("/");
             setIsOpen(false);
           }}
-=======
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate("/")}
->>>>>>> origin/main
+
         >
           MIND <span style={{ color: "#0f6a37" }}>GATE</span>
         </motion.div>
 
-<<<<<<< HEAD
+
         {/* Desktop Links */}
         <nav className="lp-nav-links desktop-only">
           {menuItems.map((item, idx) => (
@@ -107,61 +78,7 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="lp-nav-actions desktop-only">
-=======
-        <nav className="lp-nav-links">
-          <motion.a
-            className="lp-nav-link"
-            href="#support"
-            variants={hoverLink}
-            initial="rest"
-            whileHover="hover"
-            onClick={goToAI}
-          >
-            Talk to AI
-          </motion.a>
 
-          <motion.a
-            className="lp-nav-link"
-            href="#support"
-            variants={hoverLink}
-            initial="rest"
-            whileHover="hover"
-            onClick={goToHuman}
-          >
-            Talk to Human
-          </motion.a>
-
-          <motion.a
-            className="lp-nav-link"
-            href="#"
-            variants={hoverLink}
-            initial="rest"
-            whileHover="hover"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/help");
-            }}
-          >
-            Help
-          </motion.a>
-
-          <motion.a
-            className="lp-nav-link"
-            href="#"
-            variants={hoverLink}
-            initial="rest"
-            whileHover="hover"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/about");
-            }}
-          >
-            About
-          </motion.a>
-        </nav>
-
-        <div className="lp-nav-actions">
->>>>>>> origin/main
           <motion.button
             className="lp-linkbtn"
             onClick={() => navigate("/login")}
@@ -182,7 +99,7 @@ export default function Navbar() {
             Sign Up
           </motion.button>
         </div>
-<<<<<<< HEAD
+
 
         {/* Mobile Toggle */}
         <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
@@ -239,9 +156,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-=======
-      </div>
->>>>>>> origin/main
+
     </header>
   );
 }

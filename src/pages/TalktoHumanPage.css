@@ -4,74 +4,15 @@
   overflow-x: hidden;
   min-height: 100vh;
   background: transparent;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
+
   color: #0b2b20;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
     "Noto Sans", "Helvetica Neue", sans-serif;
 }
 
-<<<<<<< HEAD
-=======
-/* Fixed background layer for dynamic blobs */
-.tth-bg {
-  position: fixed;
-  inset: -40px;
-  z-index: -10;
-  pointer-events: none;
-  transform: translate3d(0, 0, 0);
-}
 
-.tth-bg::before,
-.tth-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
 
-/* Blobs layer - Uses CSS variables updated via JS for mouse/scroll motion */
-.tth-bg::before {
-  background:
-    /* abstract image layer (parallax via --bgx/--bgy) */
-    url("../assets/abstractbg.png")
-      calc(50% + var(--bgx, 0px))
-      calc(50% + var(--bgy, 0px)) / cover no-repeat,
-
-    /* subtle mint glow layers so image shows through */
-    radial-gradient(circle at calc(20% + var(--bgx, 0px)) calc(12% + var(--bgy, 0px)),
-      rgba(15, 106, 55, 0.10), transparent 58%),
-    radial-gradient(circle at calc(85% - var(--bgx, 0px)) calc(20% + var(--bgy, 0px)),
-      rgba(215, 242, 228, 0.60), transparent 58%),
-    radial-gradient(circle at calc(52% + var(--bgx, 0px)) calc(82% - var(--bgy, 0px)),
-      rgba(231, 246, 238, 0.55), transparent 60%),
-    radial-gradient(circle at 35% 60%,
-      rgba(15, 106, 55, 0.08), transparent 62%),
-
-    /* soft readable wash */
-    linear-gradient(180deg,
-      rgba(238, 247, 243, 0.65) 0%,
-      rgba(244, 251, 247, 0.55) 45%,
-      rgba(238, 247, 243, 0.65) 100%);
-
-  /* smooth fade-out on scroll (optional if you set --bgfade) */
-  opacity: var(--bgfade, 1);
-
-  /* no rotate, just scale */
-  transform: scale(1.05);
-  transition: transform 120ms linear;
-}
-
-/* Subtle grain overlay for professional texture */
-.tth-bg::after {
-  opacity: calc(0.06 * var(--bgfade, 1));
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
->>>>>>> origin/main
 /* Ensure content stays above the background */
 .tth-main, .tth-hero, .tth-support-selection {
   position: relative;
@@ -112,7 +53,7 @@
 /* Hero Section */
 .tth-hero {
   padding: 100px 0;
-<<<<<<< HEAD
+
   /* Rich greenish glassy panel with a subtle gradient for depth */
   background: linear-gradient(
     165deg,
@@ -149,27 +90,22 @@
   background: radial-gradient(circle, #dcfce7 0%, transparent 70%);
   bottom: -50px;
   left: -50px;
-=======
-  /* Light glassy panel over the dynamic site background */
-  background: rgba(249, 251, 249, 0.82);
-  backdrop-filter: blur(14px);
->>>>>>> origin/main
+
 }
 
 .tth-hero-content {
   flex: 1;
   max-width: 550px;
-<<<<<<< HEAD
+
   position: relative;
   z-index: 2;
-=======
->>>>>>> origin/main
+
 }
 
 .tth-hero-content h1 {
   font-size: 48px;
   color: #0d3a25;
-<<<<<<< HEAD
+
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -179,11 +115,7 @@
     0 2px 0 rgba(11, 43, 32, 0.1),
     0 4px 8px rgba(15, 106, 55, 0.15);
   letter-spacing: -0.01em;
-=======
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 24px;
->>>>>>> origin/main
+
 }
 
 .tth-hero-content p {
@@ -212,20 +144,16 @@
 }
 
 .btn-outline {
-<<<<<<< HEAD
+
   border: 1px solid #0fb478;
   color: #0d3a25;
   background: rgba(255, 255, 255, 0.8);
-=======
-  border: 1.5px solid #0fb478;
-  color: #0fb478;
-  background: transparent;
->>>>>>> origin/main
+
   padding: 14px 28px;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
-<<<<<<< HEAD
+
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
     0 4px 12px rgba(15, 180, 120, 0.1),
@@ -244,19 +172,12 @@
   background: linear-gradient(135deg, #0fb478 0%, #0d9a68 100%);
   color: white;
   border: 1px solid rgba(15, 106, 55, 0.1);
-=======
-}
 
-.btn-filled {
-  background: #0fb478;
-  color: white;
-  border: none;
->>>>>>> origin/main
   padding: 14px 28px;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
-<<<<<<< HEAD
+
   box-shadow: 
     0 10px 24px rgba(15, 180, 120, 0.25),
     inset 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -267,8 +188,7 @@
   background: linear-gradient(135deg, #12c988 0%, #0fb478 100%);
   box-shadow: 0 14px 32px rgba(15, 180, 120, 0.3);
   transform: translateY(-2px);
-=======
->>>>>>> origin/main
+
 }
 
 .tth-stats {
@@ -284,7 +204,7 @@
   border-radius: 26px;
   position: relative;
   overflow: hidden;
-<<<<<<< HEAD
+
   /* Enhanced 3D elevation for the video card */
   background: #ffffff;
   padding: 8px;
@@ -298,11 +218,7 @@
 
 .tth-hero-graphic:hover {
   transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
-=======
-  box-shadow:
-    0 20px 50px rgba(15, 118, 110, 0.20),
-    0 0 0 1px rgba(148, 236, 196, 0.6);
->>>>>>> origin/main
+
 }
 
 .tth-hero-media {
@@ -349,15 +265,12 @@
 
 .tth-grid {
   display: grid;
-<<<<<<< HEAD
+
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   max-width: 900px;
   margin: 0 auto;
-=======
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
->>>>>>> origin/main
+
 }
 
 .support-card {
