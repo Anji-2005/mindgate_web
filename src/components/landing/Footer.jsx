@@ -15,6 +15,25 @@ export default function Footer() {
           </a>
         </div>
       </div>
+      
+      {/* Moto Section */}
+      <div className="lp-container" style={{ marginTop: 24, textAlign: "center" }}>
+        <div style={{ 
+          color: "rgba(11, 43, 32, 0.85)", 
+          fontSize: 14, 
+          fontStyle: "italic",
+          fontWeight: 500
+        }}>
+          Minds connected, hearts protected.
+        </div>
+        <div style={{ 
+          color: "rgba(11, 43, 32, 0.6)", 
+          fontSize: 12, 
+          marginTop: 4 
+        }}>
+          Our moto
+        </div>
+      </div>
     </footer>
   );
 }

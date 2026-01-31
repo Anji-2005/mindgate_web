@@ -118,6 +118,16 @@ const About = () => {
         </div>
       </section>
 
+      {/* --- Moto Section --- */}
+      <section className="about-mission-section">
+        <div className="about-moto-container">
+          <div className="about-moto-badge">Our Moto</div>
+          <h2 className="about-moto-text">
+            Minds connected, hearts protected.
+          </h2>
+        </div>
+      </section>
+
       {/* --- Mission Grid --- */}
       <section className="about-mission-section">
         <div className="about-section-header">
