@@ -66,7 +66,7 @@ const SplashScreen = ({ onFinish }) => {
           <h1 className="splash-name">MIND<span>GATE</span></h1>
           <div className="splash-motto-wrap">
             <p>Minds connected, hearts protected.</p>
-            <p className="moto-label">Our moto.</p>
+            
           </div>
         </motion.div>
       </div>

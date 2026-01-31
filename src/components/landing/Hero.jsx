@@ -35,7 +35,7 @@ export default function Hero() {
 
               Minds connected, hearts protected. 
               <br />
-              Our moto.
+              
 
             </motion.div>
 
